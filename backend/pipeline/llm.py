@@ -1,9 +1,6 @@
-"""Strict-schema model calls, with every response cached to disk.
-
-The cache is the reason this project can be demonstrated with the network unplugged.
-Cache keys cover the prompt, the schema, the model and a run tag, so a warm cache
-replays an entire analysis instantly and for free. The cache directory is committed
-to the repository on purpose.
+"""Strict-schema model calls, cached to disk by (prompt, schema, model, run_tag).
+A warm cache replays the whole analysis offline with no network calls; cache/ is
+committed to the repo on purpose.
 """
 from __future__ import annotations
 

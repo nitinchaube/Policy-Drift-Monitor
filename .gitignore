@@ -35,3 +35,7 @@ slides/package-lock.json
 # data/extracted/ holds the coverage-criteria prose instead: CMS government work,
 # verified CPT-free. See backend/data/pdfs/README.md to retrieve the originals.
 backend/data/pdfs/*.pdf
+
+# Office lock files created when a doc/deck is open
+~$*.docx
+~$*.pptx

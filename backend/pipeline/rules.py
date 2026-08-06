@@ -1,8 +1,5 @@
-"""Rule extraction and the validation gauntlet.
-
-The model authors rules; nothing here lets it decide a claim. Everything it produces
-is a proposal that has to survive validation before it reaches the engine.
-"""
+"""Rule extraction and validation. The model proposes rules; everything here has to
+survive validate_rule() before it reaches the engine."""
 from __future__ import annotations
 
 import hashlib
@@ -75,10 +72,8 @@ def _catalogue_line(field: str) -> str:
     return line + ")"
 
 
-# The model needs types and legal enum values, not bare field names. Handed only names,
-# it emitted device_type == "cgm" and the validator rejected most of its output for a
-# value it was never told was illegal. If the validator enforces the schema, the prompt
-# has to state the schema.
+# bare field names aren't enough -- without types/enums the model emits values like
+# device_type == "cgm" that validate_rule() then has to reject
 FIELD_CATALOGUE = "\n".join(_catalogue_line(f) for f in ALLOWED_FIELDS)
 
 EXTRACT_SYSTEM = f"""You convert health insurance coverage policy text into executable claim rules.
@@ -156,13 +151,10 @@ def extract_rules(section_text: str, doc_text: str, doc_id: str,
 
 # --------------------------------------------------------------------------- validation
 def validate_rule(rule: dict, doc_text: str) -> tuple:
-    """Return (span, [problems]). An empty problem list means the rule may compile.
+    """Return (span, [problems]); an empty list means the rule may compile.
 
-    Checking that a field merely *exists* is not enough. The extractor produced
-    `claim_id contains_any ['K0554']` and `device_type in ['PDAC_approved']`, both of
-    which reference real fields and are both meaningless. The claim schema already
-    declares types and legal values, so enforcing it here catches that class of output
-    deterministically and for free.
+    Checks more than field existence. Type and enum checks against the schema catch
+    things like `claim_id contains_any ['K0554']` -- a real field, still nonsense.
     """
     problems = []
 
@@ -209,9 +201,8 @@ def validate_rule(rule: dict, doc_text: str) -> tuple:
 
 
 # --------------------------------------------------------------------------- identity
-# A quoted criterion may carry its list marker ("2. The beneficiary has been using..."),
-# which is document formatting rather than part of the requirement. Strip it for matching
-# only; source_sentence stays verbatim so it can still be located in the document.
+# strip a leading list marker ("2. The beneficiary...") for matching only --
+# source_sentence itself stays verbatim so locate() still finds it in the document
 _LIST_MARKER = re.compile(r"^\s*(?:\(?\d{1,2}[.)]|\(?[a-z][.)])\s+")
 
 
@@ -250,17 +241,10 @@ def load_reference() -> list:
 
 # --------------------------------------------------------------------------- ensemble
 def vote_rules(runs: list[list[dict]], min_agreement: int | None = None, arbiter=None):
-    """Combine several extraction runs by majority vote.
-
-    Running extraction five times to measure stability and then keeping only the first
-    run throws away four samples that were already paid for. Voting uses them.
-
-    Identity is the cited sentence, since two rules quoting the same sentence are
-    attempts at the same requirement. Among the runs that produced a rule for a given
-    sentence, the most common logic wins. A tie is broken by the more specific rule, on
-    the grounds that a dropped condition is the failure mode we actually see: the
-    extractor omitted "or a Medicare-covered CSII pump" from one criterion, and no run
-    ever invented a condition that was not there.
+    """Majority vote across extraction runs. Identity is the cited sentence; among
+    runs that produced a rule for it, the most common logic wins. Ties break toward
+    the more specific encoding (in practice the failure mode is a dropped condition,
+    not an invented one).
 
     Returns (voted_rules, report).
     """
@@ -290,14 +274,9 @@ def vote_rules(runs: list[list[dict]], min_agreement: int | None = None, arbiter
         arbitrated = False
         verdicts = {}
 
-        # Plain majority vote only corrects random variance. When the model is
-        # systematically wrong in the same way across runs, the wrong answer wins the
-        # vote. That is exactly what happens on the insulin criterion: the plurality
-        # drops the "or a Medicare-covered CSII pump" alternative.
-        #
-        # So when the runs disagree, ask an arbiter to check each variant against the
-        # source sentence and prefer one it finds faithful. Votes only break ties among
-        # equally faithful variants.
+        # majority vote only corrects random variance, not a bias repeated across runs.
+        # if given an arbiter, check each disputed variant against its source and
+        # prefer a faithful one; votes only break ties among equally faithful ones.
         if arbiter and len(groups) > 1:
             for g in groups:
                 verdicts[requires_hash(g[0])] = arbiter(g[0])

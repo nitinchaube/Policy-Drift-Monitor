@@ -1,15 +1,10 @@
-"""Round-trip verification: compile policy to a rule, decompile the rule back to prose,
-then compare the two.
+"""Round-trip verification: decompile a rule's logic back to prose, then compare that
+against the source sentence. Needs no gold ruleset -- the source sentence is its own
+ground truth -- so it works on any document.
 
-The value is that it needs no labels. Scoring extraction against a hand-authored gold
-ruleset only works on documents somebody already did by hand, which is none of the
-documents you actually care about. This works anywhere, because the source sentence is
-its own ground truth.
-
-The decompile step deliberately never sees the source sentence. If it did, it would
-paraphrase the policy rather than describe the logic, and the comparison would always
-agree with itself. Showing it only field names, operators and values forces it to say
-what the rule genuinely does.
+decompile() never sees the source sentence, only field names/operators/values;
+otherwise it would just paraphrase the policy back and the comparison would trivially
+agree.
 """
 from __future__ import annotations
 

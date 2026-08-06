@@ -15,12 +15,9 @@ export default function PolicyStudio({ data }) {
   const showingModel = source === 'model'
   const rules = showingModel ? modelRules : refRules
 
-  // The gate decides which ruleset feeds drift detection downstream. Whichever set is on
-  // screen, say plainly whether it is the one being used.
   const downstreamIsModel = data.gate.passed
 
-  // Agreement counts are keyed on the cited sentence, matching how the backend
-  // measures stability across repeated extraction runs.
+  // keyed on the cited sentence, matching how the backend tracks stability
   const agreement = useMemo(() => {
     const m = {}
     if (stability) for (const r of stability.rules) m[r.cite] = r
@@ -29,8 +26,8 @@ export default function PolicyStudio({ data }) {
 
   const active = rules.find((r) => r.rule_id === activeId) || null
 
-  // A rule's span indexes into the version it was derived from. Showing v2 while a
-  // v1 rule is selected would highlight the wrong characters, so re-locate instead.
+  // a rule's span indexes into the version it came from; re-locate for v2 instead
+  // of reusing the v1 offset
   const span = useMemo(() => {
     if (!active) return null
     if (version === 'v1') return active.source_span

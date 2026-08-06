@@ -1,14 +1,9 @@
-"""Deterministic rule compilation and claim adjudication.
+"""Rule compilation and claim adjudication. No LLM calls in this module.
 
-No language model is involved anywhere in this file, and that is the point. A model
-authors rules upstream; ordinary code executes them here. A denial has to be
-reproducible, identical every time, and defensible three years later on appeal, and
-a model in the decision path gives you none of those things.
-
-Evaluation is three-valued. A condition is TRUE, FALSE, or UNKNOWN. UNKNOWN exists
-because a claim that is missing a field has not told us the requirement failed, only
-that we cannot tell. Absence of data is not evidence of ineligibility, so UNKNOWN
-routes to a human rather than to a denial.
+Rules are authored elsewhere; this module only executes them, so a decision stays
+reproducible and auditable. Evaluation is three-valued (TRUE/FALSE/UNKNOWN) -- a
+missing field means the requirement can't be checked, not that it failed, so UNKNOWN
+routes to REVIEW rather than DENY.
 """
 from __future__ import annotations
 
@@ -84,8 +79,7 @@ def eval_rule(claim: dict, rule: dict) -> dict:
                 "why": "cannot determine whether this rule applies",
                 "citation": rule.get("source_sentence")}
 
-    # A rule marked non-codifiable encodes a clinical judgment. It applies, but it is
-    # never permitted to decide on its own.
+    # non-codifiable rules apply but never auto-decide -- always REVIEW
     if not rule.get("codifiable", True):
         return {"rule_id": rid, "status": "NOT_CODIFIABLE", "outcome": "REVIEW",
                 "why": "policy language requires human judgment",
@@ -111,7 +105,7 @@ def adjudicate(claim: dict, rules: list[dict]) -> dict:
     trace = [eval_rule(claim, r) for r in rules]
     outcomes = [t["outcome"] for t in trace if t["outcome"]]
 
-    # No rule objected, so there is no basis to deny.
+    # no rule fired -> no basis to deny
     decision = "PAY" if not outcomes else max(outcomes, key=lambda o: PRECEDENCE[o])
 
     return {"claim_id": claim["claim_id"], "decision": decision,

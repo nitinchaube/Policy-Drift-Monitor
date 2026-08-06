@@ -1,10 +1,5 @@
-"""Emit a runnable Python module from a ruleset.
-
-The focus area is worded "conversion of written policy into programming languages,
-rules, features, or models". This is the literal reading of it: a Medicare policy
-paragraph goes in, a Python function you can open and read comes out, with the sentence
-it came from in the docstring.
-"""
+"""Generate a standalone Python module from a ruleset: one function per rule, with
+its source sentence in the docstring."""
 from __future__ import annotations
 
 import re
@@ -50,14 +45,10 @@ def generate(rules: list, doc_label: str, effective: str) -> str:
         f"Effective       : {effective}",
         f"Generated       : {date.today().isoformat()}",
         "",
-        "Every function carries the policy sentence it was derived from. Nothing here",
-        "calls a language model. A model authored these rules upstream; this file only",
-        "executes them, deterministically, so a denial is reproducible and defensible.",
-        "",
-        "Each function returns None when the rule does not apply to the claim, the string",
-        '"PASS" when the requirement is met, "DENY" or "REVIEW" when it is not, and',
-        '"REVIEW" when the claim is missing a field the rule needs. Missing data never',
-        "produces a denial: absence of evidence is not evidence of ineligibility.",
+        "No LLM calls in this file -- rules were authored upstream, this just runs them.",
+        "Each function returns None (not applicable), \"PASS\", \"DENY\", or \"REVIEW\"",
+        "(requirement met, failed, or the claim is missing a field it needs). Missing",
+        "data never returns DENY.",
         '"""',
         "",
         "",

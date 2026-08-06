@@ -44,12 +44,9 @@ export function DocText({ text, span, variant = '' }) {
     const pre = preRef.current
     const mark = markRef.current
     if (!pre || !mark) return
-    // Two things had to be pinned down here. scrollIntoView walks every scrollable
-    // ancestor and, in this layout, nudged the outer page instead of the document pane,
-    // so the container is scrolled explicitly (.doctext is position:relative, which
-    // makes it the offsetParent). And behavior:'smooth' silently does nothing on this
-    // element in some engines, so the jump is instant, which is also what you want when
-    // clicking through citations in front of an audience.
+    // scrollIntoView moved the outer page, not this pane, so scroll it directly
+    // (.doctext is position:relative, making it the offsetParent). behavior:'smooth'
+    // is a no-op here too, hence the plain assignment.
     pre.scrollTop = Math.max(0, mark.offsetTop - pre.clientHeight / 2 + mark.offsetHeight / 2)
   }, [span?.[0], span?.[1], text])
 

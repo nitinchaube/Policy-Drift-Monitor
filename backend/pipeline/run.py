@@ -1,10 +1,8 @@
-"""Orchestration. Produces one result object that both the CLI and the API serve.
+"""Orchestration: one result object, shared by the CLI and the API.
 
-Runs the full analysis: ingest two policy versions, extract rules, validate them, score
-the extraction, gate it, detect drift, apply corrections, re-adjudicate, and score the
-whole thing against the revision history CMS published inside the LCD.
-
-With a warm cache this executes in a couple of seconds and makes no network calls.
+ingest both policy versions -> extract rules -> validate/score/gate the extraction
+-> detect drift -> apply corrections -> re-adjudicate -> score against the CMS
+revision history. Runs in a couple seconds from a warm cache, no network calls.
 """
 from __future__ import annotations
 
@@ -34,9 +32,8 @@ NEG_B_PDF = PDFS / "LCD - Glucose Monitors (L33822).pdf"
 
 N_STABILITY_RUNS = 5
 
-# The human step in the workflow, written out explicitly. The tool flags that this
-# criterion changed; a person decides the new logic. Keyed on the cited sentence rather
-# than the rule id, because a model-extracted ruleset invents its own ids.
+# the human-authored fix for a REVISE-flagged rule -- keyed on the cited sentence,
+# not the rule id, since a model-extracted ruleset invents its own ids
 HUMAN_PATCH = {
     "the beneficiary is insulin-treated with multiple (three or more) daily injections of "
     "insulin or a medicare-covered continuous subcutaneous insulin infusion (csii) pump; and,": {
@@ -80,8 +77,7 @@ def analyze() -> dict:
     out["reference_ruleset"] = reference
 
     # ---------------------------------------------------------------- 3. extract
-    # Five independent runs. They were always needed to measure stability; using them as
-    # an ensemble as well costs nothing extra, since the calls are already cached.
+    # five runs, needed anyway for stability -- also used as a voting ensemble for free
     runs, single_run, rejected = [], [], []
     try:
         raw, _ = extract_rules(v1_cgm["text"], v1_text, "L33822-2020", run_tag="run0")
@@ -122,9 +118,8 @@ def analyze() -> dict:
                                      "end": v1_cgm["end"]}}
 
     # ------------------------------------------------- 3b. round-trip verification
-    # Decompile each rule's logic back to prose without showing the model where it came
-    # from, then compare that against the source sentence. Needs no gold ruleset, so
-    # unlike the scoring below it would work on a document nobody has done by hand.
+    # decompile each rule back to prose (source sentence withheld) and compare --
+    # needs no gold ruleset, unlike the scoring below
     roundtrip_findings = []
     if extracted:
         try:
@@ -166,9 +161,8 @@ def analyze() -> dict:
             if k in got:
                 matched[k] = got[k]
                 used.add(k)
-        # Second chance on identical logic: a paragraph often states the same requirement
-        # twice, and the model may quote the sentence gold did not. Counting that as one
-        # miss AND one spurious is the metric being wrong twice about the same thing.
+        # second pass on identical logic: a paragraph can state one requirement twice,
+        # and the model may cite the other sentence than gold did
         for k, gold_rule in in_scope.items():
             if k in matched:
                 continue
@@ -197,21 +191,20 @@ def analyze() -> dict:
                              "model": norm_conditions(matched[k]["logic"]["requires"])}
                             for k in found if k not in same_req],
         }
-        # A rule that is not in the gold set but cites a real, verified sentence is not
-        # spurious. It is a rule the human author missed. Gating on it would be punishing
-        # the model for the gold set being incomplete, so these are reported loudly and
-        # not counted against the extraction.
+        # a model rule citing a real, verified sentence not in gold isn't spurious --
+        # it's a rule the human author missed, so it isn't gated on
         if len(found) < len(in_scope):
             gate_reasons.append(f"only found {len(found)} of {len(in_scope)} in-scope gold rules")
         if len(same_req) < len(found):
             gate_reasons.append(f"{len(found) - len(same_req)} rule(s) encode different "
                                 f"requirements than gold")
+    else:
+        gate_reasons.append("no model output available")
+
     material = [f for f in roundtrip_findings if f.get("severity") == "material"]
     if material:
         gate_reasons.append(f"{len(material)} rule(s) failed round-trip verification with a "
                             f"material omission")
-    else:
-        gate_reasons.append("no model output available")
 
     working = reference if gate_reasons else extracted
     out["extraction_score"] = score
@@ -255,8 +248,8 @@ def analyze() -> dict:
     retire = {v["rule_id"] for v in verdicts if v["recommended_action"] == "RETIRE"}
     revise = {v["rule_id"] for v in verdicts if v["recommended_action"] == "REVISE"}
 
-    # deepcopy matters: the human patch edits in place, and without a copy it would reach
-    # back through shared dicts and rewrite the baseline we are about to compare against.
+    # deepcopy: HUMAN_PATCH edits in place, and without a copy it'd corrupt the
+    # baseline via shared dict references
     corrected = [copy.deepcopy(r) for r in working if r["rule_id"] not in retire]
     patches = []
     for r in corrected:
@@ -301,9 +294,7 @@ def analyze() -> dict:
     }
 
     # ------------------------------------------------ 9b. provider explanations
-    # The summarization focus area, and the thing that makes a denial survivable: a
-    # provider is entitled to know which requirement failed and where it comes from.
-    # Generated for every claim that was not simply paid, plus every claim that flipped.
+    # generated for every non-PAY claim, plus every claim that flipped
     explanations = {"before": {}, "after": {}}
     flipped_ids = {f["claim_id"] for f in flips}
     try:

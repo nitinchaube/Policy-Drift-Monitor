@@ -1,13 +1,5 @@
-/* Design notes, so the choices are deliberate rather than accidental.
-   Reference points are internal enterprise tooling: dense, quiet, information-first.
-   Rules followed throughout:
-     - radii never exceed 4px
-     - no gradients, no glassmorphism, no coloured shadows
-     - one hairline border does the work a drop shadow would
-     - low-saturation colour; status hues are muted, not vivid
-     - 13px base, tight vertical rhythm on an 8px scale
-     - monospace for anything a person would copy: ids, codes, citations
-     - no emoji, no icon set, no centred marketing layout */
+/* Enterprise-tool look: max 4px radii, no gradients/glassmorphism, hairline borders
+   instead of shadows, muted status colors, 13px base, monospace for ids/codes/citations. */
 
 :root {
   --bg: #f6f6f4;

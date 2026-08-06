@@ -1,12 +1,7 @@
-"""Plain-English explanation of a claim decision.
+"""Plain-English explanation of a claim decision, for the provider who received it.
 
-This is the summarization focus area, and it is also the thing that makes a denial
-survivable in the real world. A provider who gets a denial is entitled to know which
-requirement failed and where it comes from, and "edit 4471 fired" is not an answer.
-
-The model writes the prose. It does not decide anything: the decision, the rule that
-fired and the citation are all handed to it, and it is explicitly told not to introduce
-requirements that are not in the trace.
+The model only writes prose. Decision, firing rule, and citation are all handed to
+it, and it's told not to introduce requirements outside the trace.
 """
 from __future__ import annotations
 

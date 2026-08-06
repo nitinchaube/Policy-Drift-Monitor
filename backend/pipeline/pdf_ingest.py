@@ -1,17 +1,10 @@
-"""Turn a CMS coverage-policy PDF into clean text with stable character offsets.
+"""PDF -> clean text with stable character offsets, for CMS coverage-policy PDFs.
 
-Real policy arrives as PDF, not as a tidy text file, so this is part of the product
-rather than a one-off conversion. Three things make CMS LCD PDFs annoying:
-
-  1. Every document opens with a multi-page contractor jurisdiction table that
-     extracts as a long column of state names. It carries no policy content.
-  2. Page headers and footers repeat on all 20-60 pages.
-  3. The revision history at the end is a table whose columns interleave when
-     flattened to text.
-
-So we do not use the whole document. We cut out the sections that actually state
-coverage rules and work on those. Everything downstream indexes into the result of
-`normalize()`, which is called exactly once here.
+Three quirks to work around: a multi-page contractor jurisdiction table up front
+with no policy content, repeating headers/footers across 20-60 pages, and a
+revision-history table whose columns interleave when flattened to text.
+coverage_text() cuts to just the coverage-criteria section. normalize() runs once;
+everything downstream (citations, offsets, the UI) indexes into its output.
 """
 from __future__ import annotations
 
@@ -51,12 +44,8 @@ _PAGE_NOISE = re.compile(
 
 
 def normalize(raw: str) -> str:
-    """Canonicalize whitespace and punctuation. Called ONCE per document.
-
-    Everything downstream (citations, offsets, the UI) uses the output of this
-    function and never sees the original bytes. That is what keeps character
-    offsets meaningful.
-    """
+    """Canonicalize whitespace/punctuation. Called once per document; offsets are
+    computed against the result, so nothing downstream should see raw bytes again."""
     t = raw.replace("\r\n", "\n").replace("\r", "\n")
     t = (t.replace(" ", " ").replace("’", "'").replace("‘", "'")
            .replace("“", '"').replace("”", '"')
@@ -69,16 +58,12 @@ def normalize(raw: str) -> str:
 
 
 def canonical(text: str) -> str:
-    """Strip whitespace entirely, for change detection only. Never for display.
+    """All whitespace removed -- for change detection only, never for display.
 
-    `normalize()` collapses whitespace runs, which is enough for most purposes but not
-    for comparing two PDF extractions of the same content. A PDF that wraps a line in
-    a different place can turn "(1)-(2)" into "(1)- (2)", and that one space is
-    indistinguishable from a real edit under collapse-only normalization.
-
-    Removing whitespace outright gives a form that survives re-typesetting, so tier 1
-    triage can answer "did anything substantive change?" without escalating a
-    reflowed paragraph to a language model.
+    normalize() collapses whitespace runs but a re-wrapped line can still leave a
+    stray space (e.g. "(1)-(2)" -> "(1)- (2)"), which reads as an edit. This form
+    survives re-typesetting, so "did anything change?" can be answered without
+    escalating to a model call.
     """
     return re.sub(r"\s+", "", text)
 
@@ -92,17 +77,13 @@ def raw_text(pdf_path: str | Path) -> str:
 
 
 def coverage_text(pdf_path: str | Path) -> str:
-    """Return just the coverage-criteria portion of the document, normalized.
+    """Coverage-criteria section only, normalized. Starts at the "Coverage
+    Indications" heading and stops before the evidence review; falls back to the
+    whole document if the heading isn't found.
 
-    Starts at the Coverage Indications heading and stops at the evidence review.
-    Falls back to the whole document if the heading is not found, so an unexpected
-    layout degrades instead of returning nothing.
-
-    If the PDF is absent, falls back to a pre-extracted copy in data/extracted/. The
-    source PDFs are not redistributed: every CMS coverage document carries an AMA CPT
-    copyright notice in its code-list sections, so publishing the PDFs would republish
-    licensed content. The coverage-criteria prose this function returns is CMS
-    government work and contains no CPT, which was checked rather than assumed.
+    Falls back to data/extracted/<stem>.txt if the PDF itself is missing. The PDFs
+    aren't redistributed here (AMA CPT notices in the code-list sections), but the
+    extracted coverage prose is CMS government work, verified CPT-free before commit.
     """
     pdf_path = Path(pdf_path)
     if not pdf_path.exists():
@@ -169,8 +150,8 @@ def segment(text: str) -> list[dict]:
 
 
 def collapse_with_map(text: str):
-    """Collapse whitespace runs to one space, remembering the source index of each
-    surviving character. Lets us match loosely but report exact offsets."""
+    """Collapse whitespace runs to one space, tracking each surviving char's source
+    index -- lets locate() match loosely but still report exact offsets."""
     out, idxmap, prev_space = [], [], False
     for i, ch in enumerate(text):
         if ch.isspace():
@@ -183,13 +164,9 @@ def collapse_with_map(text: str):
 
 
 def locate(text: str, sentence: str):
-    """Find `sentence` in `text`, returning (start, end) or None.
-
-    We never ask a model for character offsets. It quotes, we locate. A quote that
-    cannot be found is a fabricated citation and the rule is rejected. Matching is
-    whitespace-insensitive because the model quotes on one line what the PDF wraps
-    across three.
-    """
+    """Find `sentence` in `text` (whitespace-insensitive), returning (start, end) or
+    None. The model quotes; this locates -- an unfindable quote means a fabricated
+    citation, and the caller rejects the rule."""
     needle = re.sub(r"\s+", " ", sentence).strip()
     if not needle:
         return None

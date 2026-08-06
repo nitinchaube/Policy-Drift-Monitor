@@ -1,17 +1,11 @@
 """Drift detection: is an existing rule still supported by a revised policy?
 
-The obvious approach, extracting rules from both versions and diffing the two rulesets,
-does not work. The extractor is not perfectly stable, so re-extracting from a nearly
-identical document produces differences that come from our own nondeterminism rather
-than from the policy. Instead the ruleset is held fixed and the model answers one narrow
-classification question per rule.
+Re-extracting from both versions and diffing them doesn't work -- the extractor
+isn't perfectly stable, so the diff fills with its own noise. Instead the ruleset
+is held fixed and each rule is classified against the new text, one at a time.
 
-The model is never asked for the verdict. It reports observations and `derive_verdict`
-computes the verdict from a decision table. That went through three iterations: asking
-for a verdict directly made it under-sensitive (it missed "injections" becoming
-"administrations"), forcing a word-by-word diff first made it over-sensitive (a
-renumbered cross-reference started reading as a real change), and separating facts from
-judgement fixed both. Never ask a model for a conclusion you can compute from its inputs.
+The model reports observations only; derive_verdict() turns them into a verdict via
+a fixed decision table, not a model call.
 """
 from __future__ import annotations
 
@@ -78,10 +72,9 @@ A long list of differences of that kind is still no change at all."""
 
 
 def derive_verdict(obs: dict) -> tuple[str, str]:
-    """Decision table. Deterministic, inspectable, identical every time."""
+    """Fixed decision table -- deterministic, inspectable, no model call."""
     if not obs["requirement_still_present"]:
-        # Removal from a closed list of criteria contradicts a rule that enforces it,
-        # because the rule now denies claims the policy covers.
+        # deleted from a closed list -> rule now denies claims the policy covers
         return ("CONTRADICTED", "RETIRE") if obs["was_item_in_criteria_list"] \
             else ("UNADDRESSED", "HUMAN_REVIEW")
     if obs["changes_what_claims_qualify"]:
