@@ -16,19 +16,13 @@ node_modules/
 dist/
 .vite/
 
+
 # os
 .DS_Store
 
 # note: backend/cache/ is deliberately NOT ignored.
 # the cached model responses are committed so the demo
 # is reproducible offline and during the video recording.
-
-# build tooling for the report and deck generators
-report/node_modules/
-slides/node_modules/
-report/package-lock.json
-slides/package-lock.json
-*.pdf.tmp
 
 # Source PDFs are NOT redistributed. Every CMS coverage document carries an AMA CPT
 # copyright notice in its code-list sections, and the ADA guideline is ADA copyright.
@@ -39,3 +33,12 @@ backend/data/pdfs/*.pdf
 # Office lock files created when a doc/deck is open
 ~$*.docx
 ~$*.pptx
+*.pdf.tmp
+
+# LaTeX build artifacts, in case the report is rebuilt from source later
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
