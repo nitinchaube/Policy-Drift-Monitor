@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.",
+    "explanation": "The revised policy contains the exact same requirement as the existing rule: claims for a BGM and related supplies, when billed in addition to an approved CGM device and supply allowance, will be denied. The wording and intent are unchanged.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.\",\"explanation\":\"The revised policy contains the exact same requirement as the existing rule: claims for a BGM and related supplies, when billed in addition to an approved CGM device and supply allowance, will be denied. The wording and intent are unchanged.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-9",
+  "usage": {
+    "prompt": 3383,
+    "completion": 103
+  }
+}

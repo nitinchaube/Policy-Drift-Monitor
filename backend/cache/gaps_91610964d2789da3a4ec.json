@@ -1,0 +1,24 @@
+{
+  "parsed": {
+    "gaps": [
+      {
+        "requirement": "A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.",
+        "source_sentence": "A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.",
+        "why_uncovered": "None of the existing rules (CGM-1 through CGM-10) require or mention the need for a Standard Written Order (SWO) prior to claim submission for CGM devices or supplies."
+      },
+      {
+        "requirement": "Proof of delivery (POD) is a Supplier Standard and DMEPOS suppliers are required to maintain POD documentation in their files. Proof of delivery documentation must be made available to the Medicare contractor upon request. All services that do not have appropriate proof of delivery from the supplier shall be denied as not reasonable and necessary.",
+        "source_sentence": "Proof of delivery (POD) is a Supplier Standard and DMEPOS suppliers are required to maintain POD documentation in their files. Proof of delivery documentation must be made available to the Medicare contractor upon request. All services that do not have appropriate proof of delivery from the supplier shall be denied as not reasonable and necessary.",
+        "why_uncovered": "The existing rules do not address the requirement for suppliers to maintain and provide proof of delivery documentation for CGM devices or supplies."
+      }
+    ]
+  },
+  "raw": "{\"gaps\":[{\"requirement\":\"A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\",\"source_sentence\":\"A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\",\"why_uncovered\":\"None of the existing rules (CGM-1 through CGM-10) require or mention the need for a Standard Written Order (SWO) prior to claim submission for CGM devices or supplies.\"},{\"requirement\":\"Proof of delivery (POD) is a Supplier Standard and DMEPOS suppliers are required to maintain POD documentation in their files. Proof of delivery documentation must be made available to the Medicare contractor upon request. All services that do not have appropriate proof of delivery from the supplier shall be denied as not reasonable and necessary.\",\"source_sentence\":\"Proof of delivery (POD) is a Supplier Standard and DMEPOS suppliers are required to maintain POD documentation in their files. Proof of delivery documentation must be made available to the Medicare contractor upon request. All services that do not have appropriate proof of delivery from the supplier shall be denied as not reasonable and necessary.\",\"why_uncovered\":\"The existing rules do not address the requirement for suppliers to maintain and provide proof of delivery documentation for CGM devices or supplies.\"}]}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "v2gap",
+  "usage": {
+    "prompt": 3249,
+    "completion": 320
+  }
+}

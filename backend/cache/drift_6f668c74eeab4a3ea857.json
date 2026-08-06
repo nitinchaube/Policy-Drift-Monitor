@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,",
+    "wording_differences": "Original: 'The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,'\nRevised: '1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,'\nDifference: Addition of list numbering ('1.') at the start of the sentence. No other wording changes.",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": true,
+    "changes_what_claims_qualify": false,
+    "explanation": "The only change is the addition of a list number ('1.') to the beginning of the sentence. The operative requirement\u2014that the beneficiary has diabetes mellitus\u2014remains unchanged in both wording and intent. The rule logic, which checks for a diabetes diagnosis, still matches the revised policy's requirement exactly. No claim outcomes would change as a result of this edit."
+  },
+  "raw": "{\"evidence_sentence\":\"1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,\",\"wording_differences\":\"Original: 'The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,'\\nRevised: '1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,'\\nDifference: Addition of list numbering ('1.') at the start of the sentence. No other wording changes.\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":true,\"changes_what_claims_qualify\":false,\"explanation\":\"The only change is the addition of a list number ('1.') to the beginning of the sentence. The operative requirement\u2014that the beneficiary has diabetes mellitus\u2014remains unchanged in both wording and intent. The rule logic, which checks for a diabetes diagnosis, still matches the revised policy's requirement exactly. No claim outcomes would change as a result of this edit.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-1",
+  "usage": {
+    "prompt": 4178,
+    "completion": 229
+  }
+}

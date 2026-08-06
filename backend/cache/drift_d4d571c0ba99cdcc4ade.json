@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "3. The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,",
+    "wording_differences": "none",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": true,
+    "changes_what_claims_qualify": false,
+    "explanation": "The evidence sentence in the revised policy is identical to the sentence the rule was derived from. There are no wording differences. The requirement is still present as item 3 in a list of five criteria that must all be met for coverage of therapeutic CGMs. The rule logic matches the requirement exactly, so there is no change in what claims would qualify or be denied under the revised policy."
+  },
+  "raw": "{\"evidence_sentence\":\"3. The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,\",\"wording_differences\":\"none\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":true,\"changes_what_claims_qualify\":false,\"explanation\":\"The evidence sentence in the revised policy is identical to the sentence the rule was derived from. There are no wording differences. The requirement is still present as item 3 in a list of five criteria that must all be met for coverage of therapeutic CGMs. The rule logic matches the requirement exactly, so there is no change in what claims would qualify or be denied under the revised policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-004",
+  "usage": {
+    "prompt": 3550,
+    "completion": 151
+  }
+}

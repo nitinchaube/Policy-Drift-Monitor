@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "5. Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.",
+    "wording_differences": "none",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": true,
+    "changes_what_claims_qualify": false,
+    "explanation": "The sentence from which the rule was derived is present verbatim in the revised policy as item 5 in the list of coverage criteria for therapeutic CGMs. There are no wording differences. The requirement is still present, is part of a list of criteria that must all be met, and the rule's logic matches the policy requirement exactly. Therefore, the rule still does what the revised policy requires and would not change any claim outcome."
+  },
+  "raw": "{\"evidence_sentence\":\"5. Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.\",\"wording_differences\":\"none\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":true,\"changes_what_claims_qualify\":false,\"explanation\":\"The sentence from which the rule was derived is present verbatim in the revised policy as item 5 in the list of coverage criteria for therapeutic CGMs. There are no wording differences. The requirement is still present, is part of a list of criteria that must all be met, and the rule's logic matches the policy requirement exactly. Therefore, the rule still does what the revised policy requires and would not change any claim outcome.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-006",
+  "usage": {
+    "prompt": 3564,
+    "completion": 172
+  }
+}

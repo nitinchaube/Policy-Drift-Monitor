@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule does not specify that the beneficiary must have been using a BGM (blood glucose monitor); it only checks the frequency of testing, not whether a BGM was actually used.",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The policy requires both that the beneficiary has been using a BGM and that they have been performing frequent testing (four or more times a day). The rule only checks the frequency of testing, not whether a BGM was used. This could allow claims where the beneficiary did not use a BGM, which would not be allowed under the policy."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule does not specify that the beneficiary must have been using a BGM (blood glucose monitor); it only checks the frequency of testing, not whether a BGM was actually used.\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The policy requires both that the beneficiary has been using a BGM and that they have been performing frequent testing (four or more times a day). The rule only checks the frequency of testing, not whether a BGM was used. This could allow claims where the beneficiary did not use a BGM, which would not be allowed under the policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-2-bgm-testing-freq",
+  "usage": {
+    "prompt": 400,
+    "completion": 130
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "none",
+    "extra_in_rule": "none",
+    "faithful": true,
+    "severity": "none",
+    "explanation": "The rule accurately captures the policy requirement: it checks that the beneficiary is either receiving three or more daily insulin injections or is using a Medicare-covered CSII pump, as required by the policy. All relevant claim fields are used, and there are no omissions or extra conditions."
+  },
+  "raw": "{\"missing_from_rule\":\"none\",\"extra_in_rule\":\"none\",\"faithful\":true,\"severity\":\"none\",\"explanation\":\"The rule accurately captures the policy requirement: it checks that the beneficiary is either receiving three or more daily insulin injections or is using a Medicare-covered CSII pump, as required by the policy. All relevant claim fields are used, and there are no omissions or extra conditions.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-arb-fc40b582d986",
+  "usage": {
+    "prompt": 794,
+    "completion": 80
+  }
+}

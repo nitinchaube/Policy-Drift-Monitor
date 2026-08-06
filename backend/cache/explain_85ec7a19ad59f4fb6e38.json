@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Claim denied: No diabetes diagnosis documented.",
+    "explanation": "This claim is denied because the record does not show the beneficiary has diabetes mellitus, as required by: \"The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,\". Without a documented diabetes diagnosis, coverage criteria are not met.",
+    "what_to_do": "Review the patient's diagnosis and submit corrected documentation if appropriate."
+  },
+  "raw": "{\"headline\":\"Claim denied: No diabetes diagnosis documented.\",\"explanation\":\"This claim is denied because the record does not show the beneficiary has diabetes mellitus, as required by: \\\"The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,\\\". Without a documented diabetes diagnosis, coverage criteria are not met.\",\"what_to_do\":\"Review the patient's diagnosis and submit corrected documentation if appropriate.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "before-C-005",
+  "usage": {
+    "prompt": 814,
+    "completion": 90
+  }
+}

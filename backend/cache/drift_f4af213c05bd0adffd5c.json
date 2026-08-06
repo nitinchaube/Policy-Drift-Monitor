@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Non-adjunctive CGM devices replace standard home BGMs (HCPCS codes E0607, E2100, E2101) and related supplies (HCPCS codes A4233, A4234, A4235, A4236, A4244, A4245, A4246, A4247, A4250, A4253, A4255, A4256, A4257, A4258, A4259). Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.",
+    "wording_differences": "Original: \"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\"\nRevised: \"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\"\nNo wording differences; the sentence is identical.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The sentence in the revised policy is identical to the original sentence from which the rule was derived. There are no wording differences, and the operative terms, codes, and denial logic remain unchanged. Therefore, the requirement survives with the same meaning.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"Non-adjunctive CGM devices replace standard home BGMs (HCPCS codes E0607, E2100, E2101) and related supplies (HCPCS codes A4233, A4234, A4235, A4236, A4244, A4245, A4246, A4247, A4250, A4253, A4255, A4256, A4257, A4258, A4259). Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\",\"wording_differences\":\"Original: \\\"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\\\"\\nRevised: \\\"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\\\"\\nNo wording differences; the sentence is identical.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The sentence in the revised policy is identical to the original sentence from which the rule was derived. There are no wording differences, and the operative terms, codes, and denial logic remain unchanged. Therefore, the requirement survives with the same meaning.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-cgms-nonadjunctive-bgm-exclusion",
+  "usage": {
+    "prompt": 4313,
+    "completion": 325
+  }
+}

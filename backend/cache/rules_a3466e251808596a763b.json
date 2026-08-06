@@ -1,0 +1,303 @@
+{
+  "parsed": {
+    "rules": [
+      {
+        "rule_id": "CGM-1",
+        "title": "Diabetes Mellitus Diagnosis Required",
+        "summary": "Coverage for a CGM requires that the beneficiary has diabetes mellitus.",
+        "source_sentence": "The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "diabetes_diagnosis",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-2",
+        "title": "Sufficient Training Documented",
+        "summary": "Coverage for a CGM requires that the treating practitioner has concluded the beneficiary or caregiver has sufficient training using the prescribed CGM.",
+        "source_sentence": "The beneficiary's treating practitioner has concluded that the beneficiary (or beneficiary's caregiver) has sufficient training using the CGM prescribed as evidenced by providing a prescription; and,",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "sufficient_training_documented",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-3",
+        "title": "CGM Prescribed per FDA Indications",
+        "summary": "Coverage for a CGM requires that it is prescribed in accordance with its FDA indications for use.",
+        "source_sentence": "The CGM is prescribed in accordance with its FDA indications for use; and,",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      },
+      {
+        "rule_id": "CGM-4A",
+        "title": "Insulin Treated or Problematic Hypoglycemia",
+        "summary": "Coverage for a CGM requires that the beneficiary is insulin-treated or has a history of problematic hypoglycemia as specified.",
+        "source_sentence": "The beneficiary for whom a CGM is being prescribed, to improve glycemic control, meets at least one of the criteria below:",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      },
+      {
+        "rule_id": "CGM-5",
+        "title": "In-person or Telehealth Visit within 6 Months Prior to Ordering",
+        "summary": "Coverage for a CGM requires an in-person or Medicare-approved telehealth visit with the beneficiary within 6 months prior to ordering the CGM.",
+        "source_sentence": "Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person or Medicare-approved telehealth visit with the beneficiary to evaluate their diabetes control and determined that criteria (1)-(4) above are met.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "in_person_visit_within_6mo",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-6",
+        "title": "Continued Coverage Visit Every 6 Months",
+        "summary": "Continued coverage for a CGM requires an in-person or Medicare-approved telehealth visit every 6 months to document adherence.",
+        "source_sentence": "Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "followup_visit_within_6mo",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-7",
+        "title": "Supply Allowance Maximum Units per 90 Days",
+        "summary": "Billing more than three units per 90 days of code A4238 or A4239 will be denied.",
+        "source_sentence": "Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "A4238",
+                "A4239"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "units",
+              "op": "<=",
+              "value_kind": "number",
+              "value_string": null,
+              "value_number": 3,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-8",
+        "title": "Non-adjunctive CGM Replaces Home BGM and Supplies",
+        "summary": "Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.",
+        "source_sentence": "Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "E0607",
+                "E2100",
+                "E2101"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "procedure_code",
+              "op": "not_in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "E2103",
+                "A4239"
+              ]
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-9",
+        "title": "CGM Must Be Listed on PCL for E2102/E2103",
+        "summary": "CGMs billed to Medicare using HCPCS code E2102 or E2103 must be reviewed for correct coding by the PDAC contractor and be listed on the Product Classification List (PCL).",
+        "source_sentence": "If a CGM system is billed using HCPCS code E2102 or E2103 but the CGM system is not on the PCL for that particular HCPCS code, then the claim will be denied as incorrect coding.",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "E2102",
+                "E2103"
+              ]
+            }
+          ],
+          "requires": [],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      }
+    ]
+  },
+  "raw": "{\"rules\":[{\"rule_id\":\"CGM-1\",\"title\":\"Diabetes Mellitus Diagnosis Required\",\"summary\":\"Coverage for a CGM requires that the beneficiary has diabetes mellitus.\",\"source_sentence\":\"The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"diabetes_diagnosis\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-2\",\"title\":\"Sufficient Training Documented\",\"summary\":\"Coverage for a CGM requires that the treating practitioner has concluded the beneficiary or caregiver has sufficient training using the prescribed CGM.\",\"source_sentence\":\"The beneficiary's treating practitioner has concluded that the beneficiary (or beneficiary's caregiver) has sufficient training using the CGM prescribed as evidenced by providing a prescription; and,\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"sufficient_training_documented\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-3\",\"title\":\"CGM Prescribed per FDA Indications\",\"summary\":\"Coverage for a CGM requires that it is prescribed in accordance with its FDA indications for use.\",\"source_sentence\":\"The CGM is prescribed in accordance with its FDA indications for use; and,\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}},{\"rule_id\":\"CGM-4A\",\"title\":\"Insulin Treated or Problematic Hypoglycemia\",\"summary\":\"Coverage for a CGM requires that the beneficiary is insulin-treated or has a history of problematic hypoglycemia as specified.\",\"source_sentence\":\"The beneficiary for whom a CGM is being prescribed, to improve glycemic control, meets at least one of the criteria below:\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}},{\"rule_id\":\"CGM-5\",\"title\":\"In-person or Telehealth Visit within 6 Months Prior to Ordering\",\"summary\":\"Coverage for a CGM requires an in-person or Medicare-approved telehealth visit with the beneficiary within 6 months prior to ordering the CGM.\",\"source_sentence\":\"Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person or Medicare-approved telehealth visit with the beneficiary to evaluate their diabetes control and determined that criteria (1)-(4) above are met.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"in_person_visit_within_6mo\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-6\",\"title\":\"Continued Coverage Visit Every 6 Months\",\"summary\":\"Continued coverage for a CGM requires an in-person or Medicare-approved telehealth visit every 6 months to document adherence.\",\"source_sentence\":\"Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"followup_visit_within_6mo\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-7\",\"title\":\"Supply Allowance Maximum Units per 90 Days\",\"summary\":\"Billing more than three units per 90 days of code A4238 or A4239 will be denied.\",\"source_sentence\":\"Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"A4238\",\"A4239\"]}],\"requires\":[{\"field\":\"units\",\"op\":\"<=\",\"value_kind\":\"number\",\"value_string\":null,\"value_number\":3,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-8\",\"title\":\"Non-adjunctive CGM Replaces Home BGM and Supplies\",\"summary\":\"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\",\"source_sentence\":\"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"E0607\",\"E2100\",\"E2101\"]}],\"requires\":[{\"field\":\"procedure_code\",\"op\":\"not_in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"E2103\",\"A4239\"]}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-9\",\"title\":\"CGM Must Be Listed on PCL for E2102/E2103\",\"summary\":\"CGMs billed to Medicare using HCPCS code E2102 or E2103 must be reviewed for correct coding by the PDAC contractor and be listed on the Product Classification List (PCL).\",\"source_sentence\":\"If a CGM system is billed using HCPCS code E2102 or E2103 but the CGM system is not on the PCL for that particular HCPCS code, then the claim will be denied as incorrect coding.\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"E2102\",\"E2103\"]}],\"requires\":[],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}}]}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "negctl",
+  "usage": {
+    "prompt": 2388,
+    "completion": 1689
+  }
+}

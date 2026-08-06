@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits the alternative that the beneficiary may qualify if they are insulin-treated with multiple (three or more) daily injections of insulin. The rule only checks for Medicare-covered CSII pump, not for multiple daily injections of insulin (which could be checked using insulin_injections_per_day or insulin_administrations_per_day and insulin_treated).",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The policy allows qualification by either (A) multiple daily insulin injections or (B) a Medicare-covered CSII pump. The rule only checks for (B), omitting (A). This makes the rule too strict and would deny claims that qualify through multiple daily injections, which is a material omission."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits the alternative that the beneficiary may qualify if they are insulin-treated with multiple (three or more) daily injections of insulin. The rule only checks for Medicare-covered CSII pump, not for multiple daily injections of insulin (which could be checked using insulin_injections_per_day or insulin_administrations_per_day and insulin_treated).\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The policy allows qualification by either (A) multiple daily insulin injections or (B) a Medicare-covered CSII pump. The rule only checks for (B), omitting (A). This makes the rule too strict and would deny claims that qualify through multiple daily injections, which is a material omission.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-arb-958dd09fa40f",
+  "usage": {
+    "prompt": 782,
+    "completion": 154
+  }
+}

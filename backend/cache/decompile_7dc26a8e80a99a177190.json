@@ -1,0 +1,13 @@
+{
+  "parsed": {
+    "plain_english": "If device_type is equal to therapeutic_cgm, then insulin_injections_per_day must be greater than or equal to 3."
+  },
+  "raw": "{\"plain_english\":\"If device_type is equal to therapeutic_cgm, then insulin_injections_per_day must be greater than or equal to 3.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "dc-arb-bf2825df99c9",
+  "usage": {
+    "prompt": 269,
+    "completion": 32
+  }
+}

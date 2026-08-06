@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary.",
+    "wording_differences": "Original: 'Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary.'\nRevised: 'Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary.'\nThere are no wording differences; the sentence is identical in both policies.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The requirement regarding the maximum allowable units of service for codes A4238 and A4239 per 90 days is stated verbatim in the revised policy. There are no changes in wording, qualifiers, or scope. Therefore, the rule is still fully supported by the revised policy.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary.\",\"wording_differences\":\"Original: 'Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary.'\\nRevised: 'Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary.'\\nThere are no wording differences; the sentence is identical in both policies.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The requirement regarding the maximum allowable units of service for codes A4238 and A4239 per 90 days is stated verbatim in the revised policy. There are no changes in wording, qualifiers, or scope. Therefore, the rule is still fully supported by the revised policy.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-cgms-supply-allowance-units-excess",
+  "usage": {
+    "prompt": 4208,
+    "completion": 215
+  }
+}

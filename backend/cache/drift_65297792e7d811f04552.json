@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-3) above are met; and,",
+    "wording_differences": "Original: 'Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,'\nRevised:  'Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-3) above are met; and,'\n\nDifference: The original required that criteria (1-4) be met, while the revised requires only criteria (1-3) be met at the time of the in-person visit. The number of criteria referenced has changed from four to three.",
+    "changes_what_claims_qualify": true,
+    "verdict": "MODIFIED",
+    "explanation": "The change from 'criteria (1-4)' to 'criteria (1-3)' narrows the requirements that must be evaluated and met at the in-person visit prior to ordering the CGM. This means that under the revised policy, the practitioner is only required to determine that criteria (1-3) are met, not (1-4). This could allow claims to qualify that would have been denied under the original rule if criterion (4) was not met at the time of the visit. Therefore, the rule as written is now too strict compared to the revised policy.",
+    "recommended_action": "REVISE"
+  },
+  "raw": "{\"evidence_sentence\":\"Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-3) above are met; and,\",\"wording_differences\":\"Original: 'Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,'\\nRevised:  'Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-3) above are met; and,'\\n\\nDifference: The original required that criteria (1-4) be met, while the revised requires only criteria (1-3) be met at the time of the in-person visit. The number of criteria referenced has changed from four to three.\",\"changes_what_claims_qualify\":true,\"verdict\":\"MODIFIED\",\"explanation\":\"The change from 'criteria (1-4)' to 'criteria (1-3)' narrows the requirements that must be evaluated and met at the in-person visit prior to ordering the CGM. This means that under the revised policy, the practitioner is only required to determine that criteria (1-3) are met, not (1-4). This could allow claims to qualify that would have been denied under the original rule if criterion (4) was not met at the time of the visit. Therefore, the rule as written is now too strict compared to the revised policy.\",\"recommended_action\":\"REVISE\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-005",
+  "usage": {
+    "prompt": 3736,
+    "completion": 350
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "2. The beneficiary's treating practitioner has concluded that the beneficiary (or beneficiary's caregiver) has sufficient training using the CGM prescribed as evidenced by providing a prescription; and,",
+    "explanation": "The revised policy explicitly retains the requirement that the treating practitioner must conclude that the beneficiary (or caregiver) has sufficient training using the CGM prescribed, as evidenced by providing a prescription. This matches the original rule's requirement and intent.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"2. The beneficiary's treating practitioner has concluded that the beneficiary (or beneficiary's caregiver) has sufficient training using the CGM prescribed as evidenced by providing a prescription; and,\",\"explanation\":\"The revised policy explicitly retains the requirement that the treating practitioner must conclude that the beneficiary (or caregiver) has sufficient training using the CGM prescribed, as evidenced by providing a prescription. This matches the original rule's requirement and intent.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-2",
+  "usage": {
+    "prompt": 3933,
+    "completion": 100
+  }
+}

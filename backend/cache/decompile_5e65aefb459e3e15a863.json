@@ -1,0 +1,13 @@
+{
+  "parsed": {
+    "plain_english": "If procedure_code is K0553, then units must be less than or equal to 1."
+  },
+  "raw": "{\"plain_english\":\"If procedure_code is K0553, then units must be less than or equal to 1.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "dc-v1-k0553-supply-allowance-units",
+  "usage": {
+    "prompt": 262,
+    "completion": 26
+  }
+}

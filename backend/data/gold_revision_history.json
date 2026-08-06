@@ -1,0 +1,74 @@
+{
+  "_comment": "Ground truth for scoring the drift detector, taken verbatim from the Revision History Information table published inside the LCD PDF itself. CMS states what changed, which gives us an evaluation set without hand-labeling anything.",
+  "document_id": "L33822",
+  "from_version": "2020 (effective 01/01/2020, ending 07/17/2021)",
+  "to_version": "2021 (effective 07/18/2021, ending 02/27/2022)",
+  "revision_effective_date": "2021-07-18",
+  "source": "LCD L33822, Revision History Information table, Revision Effective Date 07/18/2021",
+  "source_status": "VERBATIM from the downloaded PDF. Not paraphrased.",
+  "reasons_for_change_stated_by_cms": ["Provider Education/Guidance", "Reconsideration Request"],
+
+  "documented_changes": [
+    {
+      "change_id": "R1",
+      "revision_text": "Removed: Four times or more per day testing with blood glucose monitor as prerequisite for CGM coverage",
+      "affects_source_sentence_v1": "The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,",
+      "expected_verdict": "CONTRADICTED",
+      "expected_action": "RETIRE",
+      "scoreable": true,
+      "notes": "The headline change. The criterion is deleted from an exhaustive 'all of the following' list, so a rule enforcing it now denies claims the policy covers. If the detector misses this, the demo has no punchline."
+    },
+    {
+      "change_id": "R2",
+      "revision_text": "Revised: \"injections\" to \"administrations\" for insulin treatment regimen criterion for CGMs",
+      "affects_source_sentence_v1": "The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,",
+      "expected_verdict": "MODIFIED",
+      "expected_action": "REVISE",
+      "scoreable": true,
+      "notes": "Broadens eligibility to non-injection routes. A rule keyed on injection count is now too narrow."
+    },
+    {
+      "change_id": "R3",
+      "revision_text": "Removed: \"Medicare-covered\" from CSII pump criterion language for CGMs",
+      "affects_source_sentence_v1": "The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,",
+      "expected_verdict": "MODIFIED",
+      "expected_action": "REVISE",
+      "scoreable": true,
+      "notes": "Same sentence as R2. A rule requiring the pump to be Medicare-covered is now too strict."
+    }
+  ],
+
+  "must_not_flag": [
+    {
+      "case_id": "N1",
+      "source_sentence_v1": "Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,",
+      "expected_verdict": "SUPPORTED",
+      "why": "This sentence does not appear verbatim in v2, because deleting criterion 2 renumbered the list and the cross-reference became 'criteria (1-3)'. The requirement itself is unchanged. A detector that checks whether a citation still appears would call this a change. An entailment-based detector should not. This is the sharpest false-positive trap in the document pair and it came from the source, not from us."
+    }
+  ],
+
+  "excluded_from_scoring": [
+    {
+      "change_id": "R4",
+      "revision_text": "Clarified: Coding verification language for products billed as K0554",
+      "reason": "Coding verification lives in the Policy Article, not in the coverage criteria. No rule in the working set depends on it, so there is no rule-level consequence to detect."
+    },
+    {
+      "change_id": "R5",
+      "revision_text": "SUMMARY OF EVIDENCE, ANALYSIS OF EVIDENCE, APPENDICES, BIBLIOGRAPHY and RELATED LOCAL COVERAGE DOCUMENTS sections were all revised in the same release.",
+      "reason": "Evidence review and bibliography are not coverage criteria. The ingest stage cuts the document before these sections, so they are outside what the detector ever sees. Counting them would inflate the denominator."
+    }
+  ],
+
+  "negative_test_pair": {
+    "_comment": "A real-world no-change control, better than a synthetic whitespace perturbation. Two consecutive official versions where only a HCPCS long descriptor was revised. The detector must report zero coverage-criteria findings across this pair.",
+    "from_pdf": "data/pdfs/LCD - Glucose Monitors (L33822) superseded.pdf",
+    "to_pdf": "data/pdfs/LCD - Glucose Monitors (L33822).pdf",
+    "from_version": "effective 04/01/2024, ending 09/30/2024",
+    "to_version": "effective 10/01/2024",
+    "cms_revision_text": "Revision Effective Date: 10/01/2024. HCPCS CODES: Revised: Long descriptor for HCPCS code A4271 in Group 2 Codes",
+    "expected_findings": 0
+  },
+
+  "scoring_notes": "R2 and R3 revise the same sentence, so they are not independent observations. One correct MODIFIED verdict on that criterion satisfies both. Report this as 2 affected criteria across 3 documented edits rather than 3 independent detections. With n this small, always print raw counts alongside any percentage."
+}

@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "1. The beneficiary has diabetes (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and",
+    "wording_differences": "Original: 'The beneficiary has diabetes (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and'\nRevised: '1. The beneficiary has diabetes (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and'\nThe only difference is the addition of the number '1.' at the beginning of the sentence in the revised policy, indicating it is the first item in a numbered list. The wording of the requirement itself is otherwise identical.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The requirement that the beneficiary has diabetes, as referenced by the ICD-10 code list, is present in the revised policy with identical wording except for the addition of a list number. There are no substantive changes to the meaning or scope of the requirement. Therefore, the rule is still fully supported by the revised policy.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"1. The beneficiary has diabetes (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and\",\"wording_differences\":\"Original: 'The beneficiary has diabetes (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and'\\nRevised: '1. The beneficiary has diabetes (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and'\\nThe only difference is the addition of the number '1.' at the beginning of the sentence in the revised policy, indicating it is the first item in a numbered list. The wording of the requirement itself is otherwise identical.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The requirement that the beneficiary has diabetes, as referenced by the ICD-10 code list, is present in the revised policy with identical wording except for the addition of a list number. There are no substantive changes to the meaning or scope of the requirement. Therefore, the rule is still fully supported by the revised policy.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-BGM-001",
+  "usage": {
+    "prompt": 3542,
+    "completion": 230
+  }
+}

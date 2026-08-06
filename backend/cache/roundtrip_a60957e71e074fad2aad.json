@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits that the in-person visit must be with the treating practitioner, must include evaluation of diabetes control, and must include determination that criteria (1-4) are met.",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The rule only checks for an in-person visit within 6 months, but the policy requires that the visit is with the treating practitioner, includes evaluation of diabetes control, and determination that criteria (1-4) are met. These are substantive requirements that could affect claim outcomes."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits that the in-person visit must be with the treating practitioner, must include evaluation of diabetes control, and must include determination that criteria (1-4) are met.\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The rule only checks for an in-person visit within 6 months, but the policy requires that the visit is with the treating practitioner, includes evaluation of diabetes control, and determination that criteria (1-4) are met. These are substantive requirements that could affect claim outcomes.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-5-in-person-visit-initial",
+  "usage": {
+    "prompt": 417,
+    "completion": 116
+  }
+}

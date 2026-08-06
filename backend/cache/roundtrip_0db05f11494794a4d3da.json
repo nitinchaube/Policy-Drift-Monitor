@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule does not include the 30-day time period qualifier; the policy allows 1 unit per 30 days, but the rule simply limits to 1 unit without specifying the time frame.",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The rule omits the critical qualifier that the 1 unit limit applies per 30 days. As written, the rule would deny any claim for more than 1 unit ever, rather than per 30 days, which could result in wrongful denials for claims that are appropriately spaced over time."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule does not include the 30-day time period qualifier; the policy allows 1 unit per 30 days, but the rule simply limits to 1 unit without specifying the time frame.\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The rule omits the critical qualifier that the 1 unit limit applies per 30 days. As written, the rule would deny any claim for more than 1 unit ever, rather than per 30 days, which could result in wrongful denials for claims that are appropriately spaced over time.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-k0553-supply-allowance-units",
+  "usage": {
+    "prompt": 417,
+    "completion": 122
+  }
+}

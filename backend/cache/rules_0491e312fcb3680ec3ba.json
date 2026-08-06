@@ -1,0 +1,439 @@
+{
+  "parsed": {
+    "rules": [
+      {
+        "rule_id": "CGM-1",
+        "title": "Diabetes Mellitus Diagnosis Required",
+        "summary": "Coverage requires a diagnosis of diabetes mellitus as per ICD-10 code list.",
+        "source_sentence": "The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "K0554",
+                "K0553"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "diabetes_diagnosis",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-2",
+        "title": "Frequent BGM Testing Required",
+        "summary": "Coverage requires beneficiary has been using a BGM and performing frequent (four or more times a day) testing.",
+        "source_sentence": "The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "K0554",
+                "K0553"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "bgm_testing_freq_per_day",
+              "op": ">=",
+              "value_kind": "number",
+              "value_string": null,
+              "value_number": 4,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-3",
+        "title": "Insulin-Treated with Multiple Daily Injections or Covered CSII Pump",
+        "summary": "Coverage requires insulin treatment with multiple (three or more) daily injections or a Medicare-covered CSII pump.",
+        "source_sentence": "The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "K0554",
+                "K0553"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "insulin_injections_per_day",
+              "op": ">=",
+              "value_kind": "number",
+              "value_string": null,
+              "value_number": 3,
+              "value_boolean": null,
+              "value_list": null
+            },
+            {
+              "field": "csii_pump_medicare_covered",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ANY",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-4",
+        "title": "Regimen Requires Frequent Adjustment",
+        "summary": "Coverage requires insulin regimen requires frequent adjustment by beneficiary based on BGM or CGM results.",
+        "source_sentence": "The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "K0554",
+                "K0553"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "regimen_requires_frequent_adjustment",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      },
+      {
+        "rule_id": "CGM-5",
+        "title": "In-Person Visit Within 6 Months Prior to Ordering",
+        "summary": "Treating practitioner must have in-person visit within 6 months prior to ordering CGM to evaluate diabetes control and determine criteria 1-4 are met.",
+        "source_sentence": "Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "K0554",
+                "K0553"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "in_person_visit_within_6mo",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      },
+      {
+        "rule_id": "CGM-6",
+        "title": "Ongoing In-Person Visits Every 6 Months",
+        "summary": "Every 6 months following initial prescription, treating practitioner must have in-person visit to assess adherence.",
+        "source_sentence": "Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "K0554",
+                "K0553"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "followup_visit_within_6mo",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      },
+      {
+        "rule_id": "CGM-7",
+        "title": "Deny if Any Coverage Criteria Not Met",
+        "summary": "If any of coverage criteria (1-6) are not met, the CGM and related supply allowance will be denied as not reasonable and necessary.",
+        "source_sentence": "If any of coverage criteria (1-6) are not met, the CGM and related supply allowance will be denied as not reasonable and necessary.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "K0554",
+                "K0553"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "claim_id",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "_CGM_CRITERIA_NOT_MET_",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-8",
+        "title": "K0553 Supply Allowance Billing Limit",
+        "summary": "Only one (1) UOS of code K0553 may be billed to the DME MACs at a time (per 30 days).",
+        "source_sentence": "Only one (1) UOS of code K0553 may be billed to the DME MACs at a time.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "K0553",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "units",
+              "op": "<=",
+              "value_kind": "number",
+              "value_string": null,
+              "value_number": 1,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-9",
+        "title": "K0553 Supply Allowance Frequency",
+        "summary": "The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days.",
+        "source_sentence": "The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "K0553",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "units",
+              "op": "==",
+              "value_kind": "number",
+              "value_string": null,
+              "value_number": 1,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-10",
+        "title": "BGM and Supplies Not Covered with Approved CGM",
+        "summary": "Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.",
+        "source_sentence": "Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "E0607",
+                "E2100",
+                "E2101",
+                "A4233",
+                "A4234",
+                "A4235",
+                "A4236",
+                "A4244",
+                "A4245",
+                "A4246",
+                "A4247",
+                "A4250",
+                "A4253",
+                "A4255",
+                "A4256",
+                "A4257",
+                "A4258",
+                "A4259"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "claim_id",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "_CGM_APPROVED_ON_FILE_",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "CGM-11",
+        "title": "PDAC Review Required for K0554",
+        "summary": "Continuous Glucose Monitor systems that have not been reviewed and listed on the Product Classification List for HCPCS code K0554 will be denied as incorrect coding.",
+        "source_sentence": "Continuous Glucose Monitor systems that have not been reviewed and listed on the Product Classification List for HCPCS code K0554 will be denied as incorrect coding.",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "K0554",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "device_type",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "PDAC_APPROVED"
+              ]
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      }
+    ]
+  },
+  "raw": "{\"rules\":[{\"rule_id\":\"CGM-1\",\"title\":\"Diabetes Mellitus Diagnosis Required\",\"summary\":\"Coverage requires a diagnosis of diabetes mellitus as per ICD-10 code list.\",\"source_sentence\":\"The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"K0554\",\"K0553\"]}],\"requires\":[{\"field\":\"diabetes_diagnosis\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-2\",\"title\":\"Frequent BGM Testing Required\",\"summary\":\"Coverage requires beneficiary has been using a BGM and performing frequent (four or more times a day) testing.\",\"source_sentence\":\"The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"K0554\",\"K0553\"]}],\"requires\":[{\"field\":\"bgm_testing_freq_per_day\",\"op\":\">=\",\"value_kind\":\"number\",\"value_string\":null,\"value_number\":4,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-3\",\"title\":\"Insulin-Treated with Multiple Daily Injections or Covered CSII Pump\",\"summary\":\"Coverage requires insulin treatment with multiple (three or more) daily injections or a Medicare-covered CSII pump.\",\"source_sentence\":\"The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"K0554\",\"K0553\"]}],\"requires\":[{\"field\":\"insulin_injections_per_day\",\"op\":\">=\",\"value_kind\":\"number\",\"value_string\":null,\"value_number\":3,\"value_boolean\":null,\"value_list\":null},{\"field\":\"csii_pump_medicare_covered\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ANY\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-4\",\"title\":\"Regimen Requires Frequent Adjustment\",\"summary\":\"Coverage requires insulin regimen requires frequent adjustment by beneficiary based on BGM or CGM results.\",\"source_sentence\":\"The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"K0554\",\"K0553\"]}],\"requires\":[{\"field\":\"regimen_requires_frequent_adjustment\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}},{\"rule_id\":\"CGM-5\",\"title\":\"In-Person Visit Within 6 Months Prior to Ordering\",\"summary\":\"Treating practitioner must have in-person visit within 6 months prior to ordering CGM to evaluate diabetes control and determine criteria 1-4 are met.\",\"source_sentence\":\"Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"K0554\",\"K0553\"]}],\"requires\":[{\"field\":\"in_person_visit_within_6mo\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}},{\"rule_id\":\"CGM-6\",\"title\":\"Ongoing In-Person Visits Every 6 Months\",\"summary\":\"Every 6 months following initial prescription, treating practitioner must have in-person visit to assess adherence.\",\"source_sentence\":\"Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"K0554\",\"K0553\"]}],\"requires\":[{\"field\":\"followup_visit_within_6mo\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}},{\"rule_id\":\"CGM-7\",\"title\":\"Deny if Any Coverage Criteria Not Met\",\"summary\":\"If any of coverage criteria (1-6) are not met, the CGM and related supply allowance will be denied as not reasonable and necessary.\",\"source_sentence\":\"If any of coverage criteria (1-6) are not met, the CGM and related supply allowance will be denied as not reasonable and necessary.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"K0554\",\"K0553\"]}],\"requires\":[{\"field\":\"claim_id\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"_CGM_CRITERIA_NOT_MET_\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-8\",\"title\":\"K0553 Supply Allowance Billing Limit\",\"summary\":\"Only one (1) UOS of code K0553 may be billed to the DME MACs at a time (per 30 days).\",\"source_sentence\":\"Only one (1) UOS of code K0553 may be billed to the DME MACs at a time.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"K0553\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"units\",\"op\":\"<=\",\"value_kind\":\"number\",\"value_string\":null,\"value_number\":1,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-9\",\"title\":\"K0553 Supply Allowance Frequency\",\"summary\":\"The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days.\",\"source_sentence\":\"The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"K0553\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"units\",\"op\":\"==\",\"value_kind\":\"number\",\"value_string\":null,\"value_number\":1,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-10\",\"title\":\"BGM and Supplies Not Covered with Approved CGM\",\"summary\":\"Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.\",\"source_sentence\":\"Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"E0607\",\"E2100\",\"E2101\",\"A4233\",\"A4234\",\"A4235\",\"A4236\",\"A4244\",\"A4245\",\"A4246\",\"A4247\",\"A4250\",\"A4253\",\"A4255\",\"A4256\",\"A4257\",\"A4258\",\"A4259\"]}],\"requires\":[{\"field\":\"claim_id\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"_CGM_APPROVED_ON_FILE_\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"CGM-11\",\"title\":\"PDAC Review Required for K0554\",\"summary\":\"Continuous Glucose Monitor systems that have not been reviewed and listed on the Product Classification List for HCPCS code K0554 will be denied as incorrect coding.\",\"source_sentence\":\"Continuous Glucose Monitor systems that have not been reviewed and listed on the Product Classification List for HCPCS code K0554 will be denied as incorrect coding.\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"K0554\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"device_type\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"PDAC_APPROVED\"]}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}}]}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "stability1",
+  "usage": {
+    "prompt": 1556,
+    "completion": 2256
+  }
+}

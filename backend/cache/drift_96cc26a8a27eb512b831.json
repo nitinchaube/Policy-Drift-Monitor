@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "1. The beneficiary has diabetes (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and",
+    "wording_differences": "none",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": true,
+    "changes_what_claims_qualify": false,
+    "explanation": "The evidence sentence is present verbatim in the revised policy as item 1 in the list of basic coverage criteria for home blood glucose monitors. There are no wording differences between the original and revised sentences. The requirement that the beneficiary has diabetes is still present, and it remains an item in a list of criteria that must all be met for coverage. The rule logic matches the requirement exactly, so there is no change in what claims would qualify under the revised policy."
+  },
+  "raw": "{\"evidence_sentence\":\"1. The beneficiary has diabetes (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and\",\"wording_differences\":\"none\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":true,\"changes_what_claims_qualify\":false,\"explanation\":\"The evidence sentence is present verbatim in the revised policy as item 1 in the list of basic coverage criteria for home blood glucose monitors. There are no wording differences between the original and revised sentences. The requirement that the beneficiary has diabetes is still present, and it remains an item in a list of criteria that must all be met for coverage. The rule logic matches the requirement exactly, so there is no change in what claims would qualify under the revised policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-BGM-001",
+  "usage": {
+    "prompt": 3526,
+    "completion": 164
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits the 30-day time window: the policy allows 1 unit per 30 days, but the rule only allows 1 unit per claim, regardless of the date_of_service. If multiple claims are submitted within 30 days, each with 1 unit, the rule would allow them, but the policy would deny the second claim within the 30-day window.",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The rule does not enforce the 'per 30 days' restriction from the policy. It only checks that each claim for K0553 has units <= 1, but does not check if another claim for K0553 was already submitted within the past 30 days. This could allow more than 1 unit to be billed in a 30-day period, which the policy prohibits."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits the 30-day time window: the policy allows 1 unit per 30 days, but the rule only allows 1 unit per claim, regardless of the date_of_service. If multiple claims are submitted within 30 days, each with 1 unit, the rule would allow them, but the policy would deny the second claim within the 30-day window.\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The rule does not enforce the 'per 30 days' restriction from the policy. It only checks that each claim for K0553 has units <= 1, but does not check if another claim for K0553 was already submitted within the past 30 days. This could allow more than 1 unit to be billed in a 30-day period, which the policy prohibits.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-k0553-supply-allowance-units",
+  "usage": {
+    "prompt": 789,
+    "completion": 178
+  }
+}

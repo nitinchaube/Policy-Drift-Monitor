@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "CONTRADICTED",
+    "evidence_sentence": "Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-5) are met:",
+    "explanation": "The revised policy no longer requires that the beneficiary has been using a BGM and performing frequent (four or more times a day) testing as a prerequisite for CGM coverage. Instead, it requires that the beneficiary is insulin-treated with multiple (three or more) daily administrations of insulin or a CSII pump, and that their insulin regimen requires frequent adjustment based on BGM or CGM results, but it does not specify a minimum frequency of BGM testing. The previous requirement for 'frequent (four or more times a day) testing' has been removed from the exhaustive list of coverage criteria for CGM.",
+    "recommended_action": "RETIRE"
+  },
+  "raw": "{\"verdict\":\"CONTRADICTED\",\"evidence_sentence\":\"Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-5) are met:\",\"explanation\":\"The revised policy no longer requires that the beneficiary has been using a BGM and performing frequent (four or more times a day) testing as a prerequisite for CGM coverage. Instead, it requires that the beneficiary is insulin-treated with multiple (three or more) daily administrations of insulin or a CSII pump, and that their insulin regimen requires frequent adjustment based on BGM or CGM results, but it does not specify a minimum frequency of BGM testing. The previous requirement for 'frequent (four or more times a day) testing' has been removed from the exhaustive list of coverage criteria for CGM.\",\"recommended_action\":\"RETIRE\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-2",
+  "usage": {
+    "prompt": 3277,
+    "completion": 174
+  }
+}

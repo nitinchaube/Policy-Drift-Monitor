@@ -1,0 +1,41 @@
+{
+  "_comment": "The universe of fields a rule is allowed to reference. Any extracted rule referencing a field outside this schema is rejected by the validator. Cheapest hallucination guard in the pipeline. Fields were chosen to match the actual coverage criteria in LCD L33822 as of the 01/01/2020 version.",
+  "top_level": {
+    "claim_id": "string",
+    "date_of_service": "date",
+    "procedure_code": "string",
+    "diagnosis_codes": "list[string]",
+    "units": "int",
+    "billed_amount": "number"
+  },
+  "attributes": {
+    "device_type": "string",
+    "diabetes_diagnosis": "bool",
+    "bgm_testing_freq_per_day": "int",
+    "insulin_treated": "bool",
+    "insulin_injections_per_day": "int",
+    "insulin_administrations_per_day": "int",
+    "csii_pump": "bool",
+    "csii_pump_medicare_covered": "bool",
+    "regimen_requires_frequent_adjustment": "bool",
+    "in_person_visit_within_6mo": "bool",
+    "followup_visit_within_6mo": "bool",
+    "sufficient_training_documented": "bool",
+    "severe_visual_impairment": "bool",
+    "manual_dexterity_impairment": "bool",
+    "swo_on_file": "bool"
+  },
+  "enums": {
+    "device_type": ["therapeutic_cgm", "home_bgm", "bgm_special_features", "other"]
+  },
+  "codes": {
+    "_comment": "HCPCS Level II only. CPT descriptors are AMA-licensed and are deliberately not redistributed in this public repo. DME policy runs on HCPCS, which is one reason this clinical area works for a public demonstration.",
+    "K0554": "Receiver (monitor), dedicated, for use with therapeutic CGM system",
+    "K0553": "Supply allowance for therapeutic CGM system, one month supply",
+    "E0607": "Home blood glucose monitor",
+    "E2100": "Blood glucose monitor with integrated voice synthesizer",
+    "E2101": "Blood glucose monitor with integrated lancing/blood sample",
+    "E0470": "Respiratory assist device, unrelated to this policy"
+  },
+  "code_period_note": "Per Policy Article A52464, a therapeutic CGM is billed as K0554 with supply allowance K0553 for dates of service from 07/01/2017 through 12/31/2022, and as E2103 from 01/01/2023. Sample claims use 2020-2021 dates of service, so K0554/K0553 is correct for the period being adjudicated."
+}

@@ -1,0 +1,13 @@
+{
+  "parsed": {
+    "plain_english": "If the procedure_code is E0607, E2100, or E2101, then the procedure_code must not be K0554."
+  },
+  "raw": "{\"plain_english\":\"If the procedure_code is E0607, E2100, or E2101, then the procedure_code must not be K0554.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "dc-arb-8487d2089c1e",
+  "usage": {
+    "prompt": 281,
+    "completion": 35
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "3. The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,",
+    "wording_differences": "Original: \"The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,\" Revised: \"3. The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,\" Comparison: There are no wording differences between the original and revised sentences. The operative noun and verb, qualifiers, and scope are identical. Only the numbering (now '3.') is different, which is not a difference in meaning.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The requirement that the beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results is present in the revised policy with identical wording and meaning. The only change is the addition of a list number, which does not affect the substance of the requirement. Therefore, the rule is still fully supported by the revised policy.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"3. The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,\",\"wording_differences\":\"Original: \\\"The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,\\\" Revised: \\\"3. The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,\\\" Comparison: There are no wording differences between the original and revised sentences. The operative noun and verb, qualifiers, and scope are identical. Only the numbering (now '3.') is different, which is not a difference in meaning.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The requirement that the beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results is present in the revised policy with identical wording and meaning. The only change is the addition of a list number, which does not affect the substance of the requirement. Therefore, the rule is still fully supported by the revised policy.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-004",
+  "usage": {
+    "prompt": 3566,
+    "completion": 242
+  }
+}

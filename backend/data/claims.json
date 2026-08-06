@@ -1,0 +1,260 @@
+{
+  "_comment": "20 valid claims plus 3 deliberately malformed records at the end, so the loader's validation path is visible rather than assumed. All data is synthetic. No real patient or provider information. Dates of service fall inside the 01/01/2020 to 07/17/2021 window when the v1 coverage criteria were in effect. Amounts approximate published Medicare DMEPOS allowables.",
+  "claims": [
+    {
+      "claim_id": "C-001", "date_of_service": "2021-02-11", "procedure_code": "K0554",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 237.29,
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 5,
+        "insulin_treated": true, "insulin_injections_per_day": 4, "insulin_administrations_per_day": 4,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-002", "date_of_service": "2021-02-15", "procedure_code": "K0554",
+      "diagnosis_codes": ["E10.9"], "units": 1, "billed_amount": 237.29,
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 4,
+        "insulin_treated": true, "insulin_injections_per_day": 0, "insulin_administrations_per_day": 0,
+        "csii_pump": true, "csii_pump_medicare_covered": true,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-003", "date_of_service": "2021-02-19", "procedure_code": "K0554",
+      "diagnosis_codes": ["E11.65"], "units": 1, "billed_amount": 237.29,
+      "_scenario": "fails only the 4x/day BGM testing criterion. flips when that criterion is retired.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 2,
+        "insulin_treated": true, "insulin_injections_per_day": 3, "insulin_administrations_per_day": 3,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-004", "date_of_service": "2021-02-24", "procedure_code": "K0553",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 259.55,
+      "_scenario": "same as C-003 but on the supply allowance code.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 3,
+        "insulin_treated": true, "insulin_injections_per_day": 5, "insulin_administrations_per_day": 5,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-005", "date_of_service": "2021-03-01", "procedure_code": "K0554",
+      "diagnosis_codes": ["I10"], "units": 1, "billed_amount": 237.29,
+      "_scenario": "no diabetes diagnosis. denied under both versions.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": false, "bgm_testing_freq_per_day": 0,
+        "insulin_treated": false, "insulin_injections_per_day": 0, "insulin_administrations_per_day": 0,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": false, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-006", "date_of_service": "2021-03-04", "procedure_code": "E2101",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 88.00,
+      "_scenario": "manual dexterity impairment. that criterion is a clinical judgment, so it routes to a human under both versions.",
+      "attributes": {
+        "device_type": "bgm_special_features", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 3,
+        "insulin_treated": false, "insulin_injections_per_day": 0, "insulin_administrations_per_day": 0,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": false, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "sufficient_training_documented": true,
+        "severe_visual_impairment": true, "manual_dexterity_impairment": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-007", "date_of_service": "2021-03-09", "procedure_code": "K0554",
+      "diagnosis_codes": ["E10.65"], "units": 1, "billed_amount": 237.29,
+      "_scenario": "the hero claim. tests once a day, denied for a criterion Medicare deleted on 07/18/2021.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 1,
+        "insulin_treated": true, "insulin_injections_per_day": 4, "insulin_administrations_per_day": 4,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-008", "date_of_service": "2021-03-15", "procedure_code": "K0554",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 237.29,
+      "_scenario": "testing frequency absent from the record. must REVIEW, never DENY.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true,
+        "insulin_treated": true, "insulin_injections_per_day": 4, "insulin_administrations_per_day": 4,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-009", "date_of_service": "2021-03-22", "procedure_code": "K0553",
+      "diagnosis_codes": ["E11.9"], "units": 2, "billed_amount": 519.10,
+      "_scenario": "two supply units in one period. denied under both versions.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 5,
+        "insulin_treated": true, "insulin_injections_per_day": 4, "insulin_administrations_per_day": 4,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-010", "date_of_service": "2021-03-29", "procedure_code": "K0553",
+      "diagnosis_codes": ["E10.9"], "units": 1, "billed_amount": 259.55,
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 6,
+        "insulin_treated": true, "insulin_injections_per_day": 4, "insulin_administrations_per_day": 4,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-011", "date_of_service": "2021-04-05", "procedure_code": "K0554",
+      "diagnosis_codes": ["E10.9"], "units": 1, "billed_amount": 237.29,
+      "_scenario": "has a CSII pump that is not Medicare-covered. flips when 'Medicare-covered' is dropped from the pump criterion.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 5,
+        "insulin_treated": true, "insulin_injections_per_day": 0, "insulin_administrations_per_day": 0,
+        "csii_pump": true, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-012", "date_of_service": "2021-04-12", "procedure_code": "K0554",
+      "diagnosis_codes": ["E11.22"], "units": 1, "billed_amount": 237.29,
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 4,
+        "insulin_treated": true, "insulin_injections_per_day": 3, "insulin_administrations_per_day": 3,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-013", "date_of_service": "2021-04-19", "procedure_code": "K0554",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 237.29,
+      "_scenario": "no in-person visit within six months. denied under both versions.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 5,
+        "insulin_treated": true, "insulin_injections_per_day": 4, "insulin_administrations_per_day": 4,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": false,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-014", "date_of_service": "2021-04-26", "procedure_code": "E0470",
+      "diagnosis_codes": ["G47.33"], "units": 1, "billed_amount": 1108.44,
+      "_scenario": "respiratory device. no rule in this policy applies, so there is no basis to deny.",
+      "attributes": {
+        "device_type": "other", "diabetes_diagnosis": false, "bgm_testing_freq_per_day": 0,
+        "insulin_treated": false, "insulin_injections_per_day": 0, "insulin_administrations_per_day": 0,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": false, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-015", "date_of_service": "2021-05-03", "procedure_code": "K0554",
+      "diagnosis_codes": ["E10.9"], "units": 1, "billed_amount": 237.29,
+      "_scenario": "visit field absent. stays REVIEW under both versions.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 5,
+        "insulin_treated": true, "insulin_injections_per_day": 4, "insulin_administrations_per_day": 4,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-016", "date_of_service": "2021-05-10", "procedure_code": "K0554",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 237.29,
+      "_scenario": "insulin by a non-injection route. flips when 'injections' becomes 'administrations'.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 5,
+        "insulin_treated": true, "insulin_injections_per_day": 0, "insulin_administrations_per_day": 3,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-017", "date_of_service": "2021-05-17", "procedure_code": "K0553",
+      "diagnosis_codes": ["E10.9"], "units": 1, "billed_amount": 259.55,
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 6,
+        "insulin_treated": true, "insulin_injections_per_day": 0, "insulin_administrations_per_day": 0,
+        "csii_pump": true, "csii_pump_medicare_covered": true,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-018", "date_of_service": "2021-05-24", "procedure_code": "K0554",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 237.29,
+      "_scenario": "no Standard Written Order on file. denied under both versions.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 5,
+        "insulin_treated": true, "insulin_injections_per_day": 4, "insulin_administrations_per_day": 4,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "swo_on_file": false
+      }
+    },
+    {
+      "claim_id": "C-019", "date_of_service": "2021-06-01", "procedure_code": "E0607",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 41.02,
+      "_scenario": "ordinary home blood glucose monitor. unaffected by the CGM criteria changes.",
+      "attributes": {
+        "device_type": "home_bgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 2,
+        "insulin_treated": false, "insulin_injections_per_day": 0, "insulin_administrations_per_day": 0,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": false, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": true, "sufficient_training_documented": true, "swo_on_file": true
+      }
+    },
+    {
+      "claim_id": "C-020", "date_of_service": "2021-06-08", "procedure_code": "K0553",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 259.55,
+      "_scenario": "no six-month follow-up visit. denied under both versions.",
+      "attributes": {
+        "device_type": "therapeutic_cgm", "diabetes_diagnosis": true, "bgm_testing_freq_per_day": 5,
+        "insulin_treated": true, "insulin_injections_per_day": 4, "insulin_administrations_per_day": 4,
+        "csii_pump": false, "csii_pump_medicare_covered": false,
+        "regimen_requires_frequent_adjustment": true, "in_person_visit_within_6mo": true,
+        "followup_visit_within_6mo": false, "swo_on_file": true
+      }
+    },
+
+    {
+      "claim_id": "M-001", "date_of_service": "2021-06-10", "procedure_code": "K0554",
+      "diagnosis_codes": ["E11.9"], "units": 0, "billed_amount": 237.29,
+      "_expect_rejected": "units must be >= 1",
+      "attributes": {"device_type": "therapeutic_cgm", "diabetes_diagnosis": true}
+    },
+    {
+      "claim_id": "C-001", "date_of_service": "2021-06-11", "procedure_code": "K0554",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 237.29,
+      "_expect_rejected": "duplicate claim_id",
+      "attributes": {"device_type": "therapeutic_cgm", "diabetes_diagnosis": true}
+    },
+    {
+      "claim_id": "M-003", "date_of_service": "2021-06-12",
+      "diagnosis_codes": ["E11.9"], "units": 1, "billed_amount": 237.29,
+      "_expect_rejected": "missing required field procedure_code",
+      "attributes": {"device_type": "therapeutic_cgm", "diabetes_diagnosis": true}
+    }
+  ]
+}

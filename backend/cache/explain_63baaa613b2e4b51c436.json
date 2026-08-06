@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Claim sent for review due to missing BGM testing frequency documentation.",
+    "explanation": "The record does not show whether the beneficiary has been using a BGM and performing frequent (four or more times a day) testing, as required by: \"The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,\". A person will review the claim to determine if this requirement is met.",
+    "what_to_do": "Submit documentation showing the beneficiary's BGM testing frequency if available."
+  },
+  "raw": "{\"headline\":\"Claim sent for review due to missing BGM testing frequency documentation.\",\"explanation\":\"The record does not show whether the beneficiary has been using a BGM and performing frequent (four or more times a day) testing, as required by: \\\"The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,\\\". A person will review the claim to determine if this requirement is met.\",\"what_to_do\":\"Submit documentation showing the beneficiary's BGM testing frequency if available.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "before-C-008",
+  "usage": {
+    "prompt": 579,
+    "completion": 107
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Home blood glucose monitors with special features (HCPCS codes E2100, E2101) are covered when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has a severe visual impairment (i.e., best corrected visual acuity of 20/200 or worse in both eyes) requiring use of this special monitoring system.",
+    "wording_differences": "none",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": false,
+    "changes_what_claims_qualify": false,
+    "explanation": "The sentence in the revised policy is verbatim to the original sentence from which the rule was derived. There are no wording differences, and the requirement for severe visual impairment for special-feature monitors (E2100, E2101) is still present. The rule logic matches the policy requirement exactly, and there is no change in what claims would qualify or be denied under the rule."
+  },
+  "raw": "{\"evidence_sentence\":\"Home blood glucose monitors with special features (HCPCS codes E2100, E2101) are covered when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has a severe visual impairment (i.e., best corrected visual acuity of 20/200 or worse in both eyes) requiring use of this special monitoring system.\",\"wording_differences\":\"none\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":false,\"changes_what_claims_qualify\":false,\"explanation\":\"The sentence in the revised policy is verbatim to the original sentence from which the rule was derived. There are no wording differences, and the requirement for severe visual impairment for special-feature monitors (E2100, E2101) is still present. The rule logic matches the policy requirement exactly, and there is no change in what claims would qualify or be denied under the rule.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-BGM-003",
+  "usage": {
+    "prompt": 3576,
+    "completion": 196
+  }
+}

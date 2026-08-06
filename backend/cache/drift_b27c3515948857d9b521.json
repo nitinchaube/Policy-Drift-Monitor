@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "The supply allowance (code A4238 or A4239) is a monthly allowance that may be billed up to a maximum of three (3) units of service (UOS) per ninety (90) days at a time. Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary. Refer to the CODING GUIDELINES section in the LCD-related Policy Article for additional billing instructions.",
+    "wording_differences": "Original: \"The supply allowance (code A4238 or A4239) is a monthly allowance that may be billed up to a maximum of three (3) units of service (UOS) per ninety (90) days at a time.\"\nRevised: \"The supply allowance (code A4238 or A4239) is a monthly allowance that may be billed up to a maximum of three (3) units of service (UOS) per ninety (90) days at a time. Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary. Refer to the CODING GUIDELINES section in the LCD-related Policy Article for additional billing instructions.\"\n\nThe revised sentence adds two clarifying sentences about denial for exceeding the limit and a reference to coding guidelines, but the operative language about the limit itself is unchanged.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The operative language regarding the maximum of three units per ninety days is unchanged between the original and revised policy. The additional sentences in the revised policy only clarify the consequences of exceeding the limit and provide a reference for further billing instructions, but do not alter the requirement itself. Therefore, the rule is still fully supported by the revised policy.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"The supply allowance (code A4238 or A4239) is a monthly allowance that may be billed up to a maximum of three (3) units of service (UOS) per ninety (90) days at a time. Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary. Refer to the CODING GUIDELINES section in the LCD-related Policy Article for additional billing instructions.\",\"wording_differences\":\"Original: \\\"The supply allowance (code A4238 or A4239) is a monthly allowance that may be billed up to a maximum of three (3) units of service (UOS) per ninety (90) days at a time.\\\"\\nRevised: \\\"The supply allowance (code A4238 or A4239) is a monthly allowance that may be billed up to a maximum of three (3) units of service (UOS) per ninety (90) days at a time. Billing more than three (3) UOS per ninety (90) days of code A4238 or A4239 will be denied as not reasonable and necessary. Refer to the CODING GUIDELINES section in the LCD-related Policy Article for additional billing instructions.\\\"\\n\\nThe revised sentence adds two clarifying sentences about denial for exceeding the limit and a reference to coding guidelines, but the operative language about the limit itself is unchanged.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The operative language regarding the maximum of three units per ninety days is unchanged between the original and revised policy. The additional sentences in the revised policy only clarify the consequences of exceeding the limit and provide a reference for further billing instructions, but do not alter the requirement itself. Therefore, the rule is still fully supported by the revised policy.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-cgms-supply-allowance-units",
+  "usage": {
+    "prompt": 4218,
+    "completion": 392
+  }
+}

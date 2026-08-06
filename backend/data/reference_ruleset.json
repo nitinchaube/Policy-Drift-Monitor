@@ -1,0 +1,189 @@
+{
+  "_comment": "Hand-authored rules for LCD L33822, version effective 01/01/2020 through 07/17/2021. Every source_sentence is verbatim from the PDF and is verified by exact search at load time. This file does double duty: it is the gold standard the LLM extraction is scored against, and it is the fallback ruleset so the pipeline runs end to end with no API key.",
+  "source_doc": "L33822-2020",
+  "source_pdf": "data/pdfs/L33822_2020.pdf",
+  "authored_by": "human, by hand, reading the coverage criteria directly",
+  "rules": [
+    {
+      "rule_id": "CGM-001",
+      "title": "Diabetes mellitus diagnosis required",
+      "summary": "A therapeutic CGM requires a diabetes mellitus diagnosis.",
+      "source_sentence": "The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,",
+      "logic": {
+        "applies_when": [
+          {"field": "procedure_code", "op": "in", "value": ["K0554", "K0553"]},
+          {"field": "device_type", "op": "==", "value": "therapeutic_cgm"}
+        ],
+        "requires": [{"field": "diabetes_diagnosis", "op": "is_true", "value": null}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true
+    },
+    {
+      "rule_id": "CGM-002",
+      "title": "Requires 4+ daily BGM testing",
+      "summary": "The beneficiary must already be testing with a blood glucose monitor four or more times a day.",
+      "source_sentence": "The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,",
+      "logic": {
+        "applies_when": [
+          {"field": "procedure_code", "op": "in", "value": ["K0554", "K0553"]},
+          {"field": "device_type", "op": "==", "value": "therapeutic_cgm"}
+        ],
+        "requires": [{"field": "bgm_testing_freq_per_day", "op": ">=", "value": 4}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true,
+      "_note": "The 07/18/2021 revision deleted this criterion outright. Do not edit it here. The drift detector is supposed to discover that on its own."
+    },
+    {
+      "rule_id": "CGM-003",
+      "title": "Insulin treatment threshold",
+      "summary": "Requires three or more daily insulin injections, or a Medicare-covered CSII pump.",
+      "source_sentence": "The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,",
+      "logic": {
+        "applies_when": [
+          {"field": "procedure_code", "op": "in", "value": ["K0554", "K0553"]},
+          {"field": "device_type", "op": "==", "value": "therapeutic_cgm"}
+        ],
+        "requires": [
+          {"field": "insulin_injections_per_day", "op": ">=", "value": 3},
+          {"field": "csii_pump_medicare_covered", "op": "is_true", "value": null}
+        ],
+        "combinator": "ANY",
+        "on_fail": "DENY"
+      },
+      "codifiable": true,
+      "_note": "The 07/18/2021 revision changed this criterion twice: injections became administrations, and 'Medicare-covered' was dropped from the pump language."
+    },
+    {
+      "rule_id": "CGM-004",
+      "title": "Regimen requires frequent adjustment",
+      "summary": "The insulin regimen must require frequent adjustment based on glucose testing results.",
+      "source_sentence": "The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,",
+      "logic": {
+        "applies_when": [
+          {"field": "procedure_code", "op": "in", "value": ["K0554", "K0553"]},
+          {"field": "device_type", "op": "==", "value": "therapeutic_cgm"}
+        ],
+        "requires": [{"field": "regimen_requires_frequent_adjustment", "op": "is_true", "value": null}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true
+    },
+    {
+      "rule_id": "CGM-005",
+      "title": "In-person visit within 6 months prior to order",
+      "summary": "The treating practitioner must have seen the beneficiary in person within six months before ordering.",
+      "source_sentence": "Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,",
+      "logic": {
+        "applies_when": [
+          {"field": "procedure_code", "op": "in", "value": ["K0554", "K0553"]},
+          {"field": "device_type", "op": "==", "value": "therapeutic_cgm"}
+        ],
+        "requires": [{"field": "in_person_visit_within_6mo", "op": "is_true", "value": null}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true,
+      "_note": "The cited sentence contains the cross-reference 'criteria (1-4)', which the 2021 revision renumbered to '(1-3)'. That renumbering is not a coverage change and must not be flagged as one."
+    },
+    {
+      "rule_id": "CGM-006",
+      "title": "Six-month follow-up visit",
+      "summary": "An in-person follow-up visit is required every six months after the initial prescription.",
+      "source_sentence": "Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.",
+      "logic": {
+        "applies_when": [
+          {"field": "procedure_code", "op": "in", "value": ["K0554", "K0553"]},
+          {"field": "device_type", "op": "==", "value": "therapeutic_cgm"}
+        ],
+        "requires": [{"field": "followup_visit_within_6mo", "op": "is_true", "value": null}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true
+    },
+    {
+      "rule_id": "SUP-001",
+      "title": "Supply allowance limited to one unit per 30 days",
+      "summary": "Billing more than one unit of K0553 per 30 days is denied.",
+      "source_sentence": "Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.",
+      "logic": {
+        "applies_when": [{"field": "procedure_code", "op": "==", "value": "K0553"}],
+        "requires": [{"field": "units", "op": "<=", "value": 1}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true
+    },
+    {
+      "rule_id": "BGM-001",
+      "title": "Home BGM requires a diabetes diagnosis",
+      "summary": "A home blood glucose monitor requires a diabetes diagnosis.",
+      "source_sentence": "The beneficiary has diabetes (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and",
+      "logic": {
+        "applies_when": [{"field": "device_type", "op": "in", "value": ["home_bgm", "bgm_special_features"]}],
+        "requires": [{"field": "diabetes_diagnosis", "op": "is_true", "value": null}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true
+    },
+    {
+      "rule_id": "BGM-002",
+      "title": "Sufficient training evidenced by a prescription",
+      "summary": "The practitioner must have concluded the beneficiary has sufficient training, evidenced by a prescription.",
+      "source_sentence": "The beneficiary's treating practitioner has concluded that the beneficiary (or the beneficiary's caregiver) has sufficient training using the particular device prescribed as evidenced by providing a prescription for the appropriate supplies and frequency of blood glucose testing.",
+      "logic": {
+        "applies_when": [{"field": "device_type", "op": "in", "value": ["home_bgm", "bgm_special_features"]}],
+        "requires": [{"field": "sufficient_training_documented", "op": "is_true", "value": null}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true
+    },
+    {
+      "rule_id": "BGM-003",
+      "title": "Special-feature monitors require severe visual impairment",
+      "summary": "E2100 and E2101 require a certified severe visual impairment.",
+      "source_sentence": "Home blood glucose monitors with special features (HCPCS codes E2100, E2101) are covered when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has a severe visual impairment (i.e., best corrected visual acuity of 20/200 or worse in both eyes) requiring use of this special monitoring system.",
+      "logic": {
+        "applies_when": [{"field": "procedure_code", "op": "in", "value": ["E2100", "E2101"]}],
+        "requires": [{"field": "severe_visual_impairment", "op": "is_true", "value": null}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true
+    },
+    {
+      "rule_id": "BGM-004",
+      "title": "Manual dexterity impairment for E2101",
+      "summary": "E2101 is also covered for impairment of manual dexterity severe enough to require the device.",
+      "source_sentence": "Code E2101 is also covered for those with impairment of manual dexterity when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has an impairment of manual dexterity severe enough to require the use of this special monitoring system.",
+      "logic": {
+        "applies_when": [{"field": "procedure_code", "op": "==", "value": "E2101"}],
+        "requires": [{"field": "manual_dexterity_impairment", "op": "is_true", "value": null}],
+        "combinator": "ALL",
+        "on_fail": "REVIEW"
+      },
+      "codifiable": false,
+      "_note": "Marked non-codifiable. 'Severe enough to require the use of this special monitoring system' is a clinical judgment the claim record cannot settle, so this always routes to a human and never auto-denies."
+    },
+    {
+      "rule_id": "GEN-001",
+      "title": "Standard Written Order required before billing",
+      "summary": "A completed Standard Written Order must be received before the claim is submitted.",
+      "source_sentence": "If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.",
+      "logic": {
+        "applies_when": [{"field": "procedure_code", "op": "in", "value": ["K0554", "K0553", "E0607", "E2100", "E2101"]}],
+        "requires": [{"field": "swo_on_file", "op": "is_true", "value": null}],
+        "combinator": "ALL",
+        "on_fail": "DENY"
+      },
+      "codifiable": true
+    }
+  ]
+}

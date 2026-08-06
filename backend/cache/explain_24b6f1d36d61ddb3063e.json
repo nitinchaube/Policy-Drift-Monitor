@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Claim denied: No signed written order (SWO) on file.",
+    "explanation": "The claim is denied because there was no completed SWO on file at the time of billing. The governing policy states: \"If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\"",
+    "what_to_do": "Obtain a completed SWO and resubmit the claim if appropriate."
+  },
+  "raw": "{\"headline\":\"Claim denied: No signed written order (SWO) on file.\",\"explanation\":\"The claim is denied because there was no completed SWO on file at the time of billing. The governing policy states: \\\"If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\\\"\",\"what_to_do\":\"Obtain a completed SWO and resubmit the claim if appropriate.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "before-C-018",
+  "usage": {
+    "prompt": 590,
+    "completion": 95
+  }
+}

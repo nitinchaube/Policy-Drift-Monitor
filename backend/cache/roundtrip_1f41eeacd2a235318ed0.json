@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "Reference to the ICD-10 code list for applicable diagnoses is missing from the rule description.",
+    "extra_in_rule": "The rule adds a condition that applies only if device_type is 'therapeutic_cgm', which is not stated in the policy sentence.",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The policy requires a diagnosis of diabetes mellitus as defined by a specific ICD-10 code list, but the rule only checks for a general diabetes diagnosis and does not reference the code list, potentially allowing diagnoses not covered by the policy. Additionally, the rule restricts the requirement to cases where the device type is 'therapeutic_cgm', which is not specified in the policy sentence, potentially excluding cases that should be included."
+  },
+  "raw": "{\"missing_from_rule\":\"Reference to the ICD-10 code list for applicable diagnoses is missing from the rule description.\",\"extra_in_rule\":\"The rule adds a condition that applies only if device_type is 'therapeutic_cgm', which is not stated in the policy sentence.\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The policy requires a diagnosis of diabetes mellitus as defined by a specific ICD-10 code list, but the rule only checks for a general diabetes diagnosis and does not reference the code list, potentially allowing diagnoses not covered by the policy. Additionally, the rule restricts the requirement to cases where the device type is 'therapeutic_cgm', which is not specified in the policy sentence, potentially excluding cases that should be included.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-1-diabetes-diagnosis",
+  "usage": {
+    "prompt": 398,
+    "completion": 153
+  }
+}

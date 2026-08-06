@@ -1,0 +1,13 @@
+{
+  "parsed": {
+    "plain_english": "If device_type is equal to therapeutic_cgm, then followup_visit_within_6mo must be true."
+  },
+  "raw": "{\"plain_english\":\"If device_type is equal to therapeutic_cgm, then followup_visit_within_6mo must be true.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "dc-v1-cgm-6-followup-visit",
+  "usage": {
+    "prompt": 271,
+    "completion": 29
+  }
+}

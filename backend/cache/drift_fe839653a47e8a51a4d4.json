@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "Non-adjunctive CGM devices replace standard home BGMs (HCPCS codes E0607, E2100, E2101) and related supplies (HCPCS codes A4233, A4234, A4235, A4236, A4244, A4245, A4246, A4247, A4250, A4253, A4255, A4256, A4257, A4258, A4259). Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.",
+    "explanation": "The revised policy explicitly states that claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied. This matches the requirement in the existing rule, with the same codes and logic, so the rule is still fully supported.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"Non-adjunctive CGM devices replace standard home BGMs (HCPCS codes E0607, E2100, E2101) and related supplies (HCPCS codes A4233, A4234, A4235, A4236, A4244, A4245, A4246, A4247, A4250, A4253, A4255, A4256, A4257, A4258, A4259). Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\",\"explanation\":\"The revised policy explicitly states that claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied. This matches the requirement in the existing rule, with the same codes and logic, so the rule is still fully supported.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-8",
+  "usage": {
+    "prompt": 4042,
+    "completion": 228
+  }
+}

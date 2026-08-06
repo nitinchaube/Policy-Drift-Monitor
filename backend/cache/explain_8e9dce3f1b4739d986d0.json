@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Claim approved for K0554: therapeutic CGM supply.",
+    "explanation": "All requirements for coverage of procedure code K0554 were met. No policy rule objected to this claim.",
+    "what_to_do": "No action needed."
+  },
+  "raw": "{\"headline\":\"Claim approved for K0554: therapeutic CGM supply.\",\"explanation\":\"All requirements for coverage of procedure code K0554 were met. No policy rule objected to this claim.\",\"what_to_do\":\"No action needed.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "after-C-007",
+  "usage": {
+    "prompt": 526,
+    "completion": 49
+  }
+}

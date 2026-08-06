@@ -1,0 +1,13 @@
+{
+  "parsed": {
+    "plain_english": "If the procedure_code is E0607, E2100, or E2101, then the device_type must not be therapeutic_cgm."
+  },
+  "raw": "{\"plain_english\":\"If the procedure_code is E0607, E2100, or E2101, then the device_type must not be therapeutic_cgm.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "dc-v1-cgm-bgm-mutual-exclusion",
+  "usage": {
+    "prompt": 283,
+    "completion": 35
+  }
+}

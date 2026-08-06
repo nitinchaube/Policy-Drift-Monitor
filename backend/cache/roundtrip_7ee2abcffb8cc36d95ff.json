@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits the requirement that, for CSII pump users, the pump must be Medicare-covered (csii_pump_medicare_covered is true). The rule also allows insulin_treated to qualify a claim even if the patient is not on multiple daily injections or a Medicare-covered CSII pump, which is broader than the policy.",
+    "extra_in_rule": "The rule allows claims where insulin_treated is true, even if the patient does not meet the specific requirements of multiple daily injections or Medicare-covered CSII pump, which is not stated in the policy.",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The rule is materially less strict than the policy: it allows any insulin-treated beneficiary to qualify, regardless of whether they are on multiple daily injections or a Medicare-covered CSII pump. It also omits the explicit requirement that the CSII pump be Medicare-covered, which could allow claims that should be denied under the policy."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits the requirement that, for CSII pump users, the pump must be Medicare-covered (csii_pump_medicare_covered is true). The rule also allows insulin_treated to qualify a claim even if the patient is not on multiple daily injections or a Medicare-covered CSII pump, which is broader than the policy.\",\"extra_in_rule\":\"The rule allows claims where insulin_treated is true, even if the patient does not meet the specific requirements of multiple daily injections or Medicare-covered CSII pump, which is not stated in the policy.\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The rule is materially less strict than the policy: it allows any insulin-treated beneficiary to qualify, regardless of whether they are on multiple daily injections or a Medicare-covered CSII pump. It also omits the explicit requirement that the CSII pump be Medicare-covered, which could allow claims that should be denied under the policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-arb-f62fe1ae67b7",
+  "usage": {
+    "prompt": 788,
+    "completion": 195
+  }
+}

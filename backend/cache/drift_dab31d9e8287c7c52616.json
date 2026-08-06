@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.",
+    "wording_differences": "Original: \"If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\"\nRevised: \"If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\"\nNo differences in wording; the sentence is identical.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The requirement for a completed Standard Written Order (SWO) before billing is stated in exactly the same words in the revised policy as in the original. There are no changes in wording, qualifiers, or scope. Therefore, the rule is still fully supported by the revised policy.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\",\"wording_differences\":\"Original: \\\"If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\\\"\\nRevised: \\\"If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\\\"\\nNo differences in wording; the sentence is identical.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The requirement for a completed Standard Written Order (SWO) before billing is stated in exactly the same words in the revised policy as in the original. There are no changes in wording, qualifiers, or scope. Therefore, the rule is still fully supported by the revised policy.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-GEN-001",
+  "usage": {
+    "prompt": 3558,
+    "completion": 221
+  }
+}

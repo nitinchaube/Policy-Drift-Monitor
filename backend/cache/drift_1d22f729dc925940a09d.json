@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "2. The beneficiary is insulin-treated with multiple (three or more) daily administrations of insulin or a continuous subcutaneous insulin infusion (CSII) pump; and,",
+    "wording_differences": "Original: \"The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,\"\nRevised: \"The beneficiary is insulin-treated with multiple (three or more) daily administrations of insulin or a continuous subcutaneous insulin infusion (CSII) pump; and,\"\n\nDifferences:\n- \"injections\" (original) vs \"administrations\" (revised)\n- \"Medicare-covered\" (original) vs omitted in revised (now just \"continuous subcutaneous insulin infusion (CSII) pump\")",
+    "changes_what_claims_qualify": true,
+    "verdict": "MODIFIED",
+    "explanation": "The revised policy changes \"injections\" to \"administrations,\" which could include other forms of insulin delivery beyond injections, potentially widening the scope. Additionally, the requirement that the CSII pump be \"Medicare-covered\" is omitted, which could allow for coverage of non-Medicare-covered pumps. Both changes could result in claims being approved under the revised policy that would have been denied under the original rule.",
+    "recommended_action": "REVISE"
+  },
+  "raw": "{\"evidence_sentence\":\"2. The beneficiary is insulin-treated with multiple (three or more) daily administrations of insulin or a continuous subcutaneous insulin infusion (CSII) pump; and,\",\"wording_differences\":\"Original: \\\"The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,\\\"\\nRevised: \\\"The beneficiary is insulin-treated with multiple (three or more) daily administrations of insulin or a continuous subcutaneous insulin infusion (CSII) pump; and,\\\"\\n\\nDifferences:\\n- \\\"injections\\\" (original) vs \\\"administrations\\\" (revised)\\n- \\\"Medicare-covered\\\" (original) vs omitted in revised (now just \\\"continuous subcutaneous insulin infusion (CSII) pump\\\")\",\"changes_what_claims_qualify\":true,\"verdict\":\"MODIFIED\",\"explanation\":\"The revised policy changes \\\"injections\\\" to \\\"administrations,\\\" which could include other forms of insulin delivery beyond injections, potentially widening the scope. Additionally, the requirement that the CSII pump be \\\"Medicare-covered\\\" is omitted, which could allow for coverage of non-Medicare-covered pumps. Both changes could result in claims being approved under the revised policy that would have been denied under the original rule.\",\"recommended_action\":\"REVISE\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-003",
+  "usage": {
+    "prompt": 3596,
+    "completion": 281
+  }
+}

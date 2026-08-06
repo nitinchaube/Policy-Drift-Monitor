@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "none",
+    "extra_in_rule": "none",
+    "faithful": true,
+    "severity": "none",
+    "explanation": "The rule accurately captures the policy requirement that the beneficiary must have a diabetes diagnosis when the device type is 'therapeutic_cgm'. The reference to the ICD-10 code list is narrative context and not a material omission, as the rule uses the diabetes_diagnosis field, which is a proxy for the required diagnosis. No extra or missing conditions are present."
+  },
+  "raw": "{\"missing_from_rule\":\"none\",\"extra_in_rule\":\"none\",\"faithful\":true,\"severity\":\"none\",\"explanation\":\"The rule accurately captures the policy requirement that the beneficiary must have a diabetes diagnosis when the device type is 'therapeutic_cgm'. The reference to the ICD-10 code list is narrative context and not a material omission, as the rule uses the diabetes_diagnosis field, which is a proxy for the required diagnosis. No extra or missing conditions are present.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-1-diabetes-diagnosis",
+  "usage": {
+    "prompt": 770,
+    "completion": 99
+  }
+}

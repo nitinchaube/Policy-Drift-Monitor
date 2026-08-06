@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,",
+    "explanation": "The revised policy explicitly states as the first coverage criterion for CGM devices that the beneficiary must have diabetes mellitus, matching the requirement in the existing rule. The wording is nearly identical, and the requirement is unchanged in scope or meaning.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,\",\"explanation\":\"The revised policy explicitly states as the first coverage criterion for CGM devices that the beneficiary must have diabetes mellitus, matching the requirement in the existing rule. The wording is nearly identical, and the requirement is unchanged in scope or meaning.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-1",
+  "usage": {
+    "prompt": 3280,
+    "completion": 93
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "If a CGM system is billed using HCPCS code E2102 or E2103 but the CGM system is not on the PCL for that particular HCPCS code, then the claim will be denied as incorrect coding.",
+    "explanation": "The revised policy contains the exact same requirement as the existing rule: CGM systems billed under E2102 or E2103 must be listed on the Product Classification List (PCL), or the claim will be denied. The wording is identical to the original sentence from which the rule was derived.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"If a CGM system is billed using HCPCS code E2102 or E2103 but the CGM system is not on the PCL for that particular HCPCS code, then the claim will be denied as incorrect coding.\",\"explanation\":\"The revised policy contains the exact same requirement as the existing rule: CGM systems billed under E2102 or E2103 must be listed on the Product Classification List (PCL), or the claim will be denied. The wording is identical to the original sentence from which the rule was derived.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-9",
+  "usage": {
+    "prompt": 3960,
+    "completion": 123
+  }
+}

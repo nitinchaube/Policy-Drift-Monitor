@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.",
+    "wording_differences": "none",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The sentence in the revised policy is verbatim to the original sentence from which the rule was derived. There are no wording differences, qualifiers, or changes in scope, frequency, or requirements. Therefore, the requirement survives with the same meaning.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.\",\"wording_differences\":\"none\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The sentence in the revised policy is verbatim to the original sentence from which the rule was derived. There are no wording differences, qualifiers, or changes in scope, frequency, or requirements. Therefore, the requirement survives with the same meaning.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-006",
+  "usage": {
+    "prompt": 3580,
+    "completion": 124
+  }
+}

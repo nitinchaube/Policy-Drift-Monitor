@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Claim for K0553 approved for payment.",
+    "explanation": "All requirements for coverage of procedure code K0553 were met and no policy rules objected to this claim.",
+    "what_to_do": "No action needed."
+  },
+  "raw": "{\"headline\":\"Claim for K0553 approved for payment.\",\"explanation\":\"All requirements for coverage of procedure code K0553 were met and no policy rules objected to this claim.\",\"what_to_do\":\"No action needed.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "after-C-004",
+  "usage": {
+    "prompt": 526,
+    "completion": 46
+  }
+}

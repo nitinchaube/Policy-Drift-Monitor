@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-3) above are met; and,",
+    "explanation": "The revised policy contains the exact same requirement as the existing rule: an in-person visit within 6 months prior to ordering the CGM to evaluate diabetes control and confirm criteria are met. The wording is nearly identical to the original derived sentence.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-3) above are met; and,\",\"explanation\":\"The revised policy contains the exact same requirement as the existing rule: an in-person visit within 6 months prior to ordering the CGM to evaluate diabetes control and confirm criteria are met. The wording is nearly identical to the original derived sentence.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-5",
+  "usage": {
+    "prompt": 3307,
+    "completion": 111
+  }
+}

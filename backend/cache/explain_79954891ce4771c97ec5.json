@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Review needed: in-person visit within 6 months not documented.",
+    "explanation": "The record does not show whether 'Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,' as required by policy.",
+    "what_to_do": "Submit documentation showing an in-person visit within 6 months prior to ordering the CGM."
+  },
+  "raw": "{\"headline\":\"Review needed: in-person visit within 6 months not documented.\",\"explanation\":\"The record does not show whether 'Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,' as required by policy.\",\"what_to_do\":\"Submit documentation showing an in-person visit within 6 months prior to ordering the CGM.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "before-C-015",
+  "usage": {
+    "prompt": 601,
+    "completion": 98
+  }
+}

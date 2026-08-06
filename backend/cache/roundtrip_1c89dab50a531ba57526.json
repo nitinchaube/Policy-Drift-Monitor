@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits the requirement that the denial applies only when a BGM and related supplies are billed IN ADDITION TO an approved CGM device (K0554) AND associated supply allowance (K0553). The rule only checks if the device_type is therapeutic_cgm, not whether K0554 and K0553 are also present on the claim.",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The policy denies claims for BGM and related supplies only when they are billed in addition to both an approved CGM device (K0554) and its supply allowance (K0553). The rule, however, denies BGM claims whenever the device_type is therapeutic_cgm, regardless of whether K0554 and K0553 are present. This could result in denying claims that should be allowed if the CGM device and supply allowance are not also billed, making the rule materially stricter than the policy."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits the requirement that the denial applies only when a BGM and related supplies are billed IN ADDITION TO an approved CGM device (K0554) AND associated supply allowance (K0553). The rule only checks if the device_type is therapeutic_cgm, not whether K0554 and K0553 are also present on the claim.\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The policy denies claims for BGM and related supplies only when they are billed in addition to both an approved CGM device (K0554) and its supply allowance (K0553). The rule, however, denies BGM claims whenever the device_type is therapeutic_cgm, regardless of whether K0554 and K0553 are present. This could result in denying claims that should be allowed if the CGM device and supply allowance are not also billed, making the rule materially stricter than the policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-arb-d3556edffe0d",
+  "usage": {
+    "prompt": 786,
+    "completion": 198
+  }
+}

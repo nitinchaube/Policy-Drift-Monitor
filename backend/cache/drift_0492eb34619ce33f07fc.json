@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Home blood glucose monitors with special features (HCPCS codes E2100, E2101) are covered when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has a severe visual impairment (i.e., best corrected visual acuity of 20/200 or worse in both eyes) requiring use of this special monitoring system.",
+    "wording_differences": "Original: 'Home blood glucose monitors with special features (HCPCS codes E2100, E2101) are covered when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has a severe visual impairment (i.e., best corrected visual acuity of 20/200 or worse in both eyes) requiring use of this special monitoring system.'\nRevised: 'Home blood glucose monitors with special features (HCPCS codes E2100, E2101) are covered when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has a severe visual impairment (i.e., best corrected visual acuity of 20/200 or worse in both eyes) requiring use of this special monitoring system.'\n\nDifferences: none.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The sentence in the revised policy is identical to the original sentence from which the rule was derived. There are no wording differences, qualifiers, or scope changes. Therefore, the requirement survives with the same meaning and claims would be decided the same way under both versions.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"Home blood glucose monitors with special features (HCPCS codes E2100, E2101) are covered when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has a severe visual impairment (i.e., best corrected visual acuity of 20/200 or worse in both eyes) requiring use of this special monitoring system.\",\"wording_differences\":\"Original: 'Home blood glucose monitors with special features (HCPCS codes E2100, E2101) are covered when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has a severe visual impairment (i.e., best corrected visual acuity of 20/200 or worse in both eyes) requiring use of this special monitoring system.'\\nRevised: 'Home blood glucose monitors with special features (HCPCS codes E2100, E2101) are covered when the basic coverage criteria (1)-(2) are met and the treating practitioner certifies that the beneficiary has a severe visual impairment (i.e., best corrected visual acuity of 20/200 or worse in both eyes) requiring use of this special monitoring system.'\\n\\nDifferences: none.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The sentence in the revised policy is identical to the original sentence from which the rule was derived. There are no wording differences, qualifiers, or scope changes. Therefore, the requirement survives with the same meaning and claims would be decided the same way under both versions.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-BGM-003",
+  "usage": {
+    "prompt": 3738,
+    "completion": 329
+  }
+}

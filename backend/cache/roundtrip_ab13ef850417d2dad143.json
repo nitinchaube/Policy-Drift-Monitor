@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "none",
+    "extra_in_rule": "none",
+    "faithful": true,
+    "severity": "none",
+    "explanation": "The rule correctly captures the requirement that, for therapeutic CGM devices, there must be an in-person visit within six months prior to ordering. The narrative context about evaluating diabetes control and determining criteria (1-4) are met is not a material omission, as those are either narrative or covered by other rules/fields. No claim field exists for those specifics, so the rule is faithful to the policy given the available fields."
+  },
+  "raw": "{\"missing_from_rule\":\"none\",\"extra_in_rule\":\"none\",\"faithful\":true,\"severity\":\"none\",\"explanation\":\"The rule correctly captures the requirement that, for therapeutic CGM devices, there must be an in-person visit within six months prior to ordering. The narrative context about evaluating diabetes control and determining criteria (1-4) are met is not a material omission, as those are either narrative or covered by other rules/fields. No claim field exists for those specifics, so the rule is faithful to the policy given the available fields.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-5-in-person-visit-initial",
+  "usage": {
+    "prompt": 789,
+    "completion": 111
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "4. Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-3) above are met; and,",
+    "wording_differences": "none",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": true,
+    "changes_what_claims_qualify": false,
+    "explanation": "The evidence sentence in the revised policy is identical to the sentence the rule was derived from. There are no wording differences, and the requirement is still present as item 4 in a list of coverage criteria that must all be met. The rule logic matches the policy requirement exactly, so there is no change in what claims would qualify or be denied under the revised policy."
+  },
+  "raw": "{\"evidence_sentence\":\"4. Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-3) above are met; and,\",\"wording_differences\":\"none\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":true,\"changes_what_claims_qualify\":false,\"explanation\":\"The evidence sentence in the revised policy is identical to the sentence the rule was derived from. There are no wording differences, and the requirement is still present as item 4 in a list of coverage criteria that must all be met. The rule logic matches the policy requirement exactly, so there is no change in what claims would qualify or be denied under the revised policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-005",
+  "usage": {
+    "prompt": 3574,
+    "completion": 165
+  }
+}

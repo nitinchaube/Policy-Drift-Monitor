@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.",
+    "wording_differences": "Original: 'Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.'\nRevised: 'Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.'\n\nDifferences: none.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The sentence in the revised policy is identical to the original sentence from which the rule was derived. There are no wording differences, qualifiers, or scope changes. Therefore, the requirement survives with the same meaning and effect.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.\",\"wording_differences\":\"Original: 'Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.'\\nRevised: 'Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.'\\n\\nDifferences: none.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The sentence in the revised policy is identical to the original sentence from which the rule was derived. There are no wording differences, qualifiers, or scope changes. Therefore, the requirement survives with the same meaning and effect.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-6",
+  "usage": {
+    "prompt": 4363,
+    "completion": 227
+  }
+}

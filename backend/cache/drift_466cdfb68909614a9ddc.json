@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "5. Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person or Medicare-approved telehealth visit with the beneficiary to evaluate their diabetes control and determined that criteria (1)-(4) above are met.",
+    "explanation": "The revised policy contains the exact same requirement as the existing rule: a visit (in-person or telehealth) within 6 months prior to ordering the CGM to evaluate diabetes control and confirm criteria are met. The wording is nearly identical and the meaning is unchanged.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"5. Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person or Medicare-approved telehealth visit with the beneficiary to evaluate their diabetes control and determined that criteria (1)-(4) above are met.\",\"explanation\":\"The revised policy contains the exact same requirement as the existing rule: a visit (in-person or telehealth) within 6 months prior to ordering the CGM to evaluate diabetes control and confirm criteria are met. The wording is nearly identical and the meaning is unchanged.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-5",
+  "usage": {
+    "prompt": 3959,
+    "completion": 120
+  }
+}

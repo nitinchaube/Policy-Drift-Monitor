@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Denied: No in-person visit within 6 months prior to ordering CGM.",
+    "explanation": "This claim is denied because the record does not show that, within six (6) months prior to ordering the CGM, the treating practitioner had an in-person visit with the beneficiary to evaluate their diabetes control. The governing policy states: \"Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,\".",
+    "what_to_do": "Submit documentation of an in-person visit within 6 months prior to ordering the CGM if available."
+  },
+  "raw": "{\"headline\":\"Denied: No in-person visit within 6 months prior to ordering CGM.\",\"explanation\":\"This claim is denied because the record does not show that, within six (6) months prior to ordering the CGM, the treating practitioner had an in-person visit with the beneficiary to evaluate their diabetes control. The governing policy states: \\\"Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,\\\".\",\"what_to_do\":\"Submit documentation of an in-person visit within 6 months prior to ordering the CGM if available.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "before-C-013",
+  "usage": {
+    "prompt": 609,
+    "completion": 140
+  }
+}

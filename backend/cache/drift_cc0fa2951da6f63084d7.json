@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "2. The beneficiary is insulin-treated with multiple (three or more) daily administrations of insulin or a continuous subcutaneous insulin infusion (CSII) pump; and,",
+    "explanation": "The revised policy explicitly states the same requirement as the existing rule: the beneficiary must be insulin-treated with multiple (three or more) daily administrations of insulin or a CSII pump. The wording is nearly identical and the meaning is unchanged.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"2. The beneficiary is insulin-treated with multiple (three or more) daily administrations of insulin or a continuous subcutaneous insulin infusion (CSII) pump; and,\",\"explanation\":\"The revised policy explicitly states the same requirement as the existing rule: the beneficiary must be insulin-treated with multiple (three or more) daily administrations of insulin or a CSII pump. The wording is nearly identical and the meaning is unchanged.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-3",
+  "usage": {
+    "prompt": 3320,
+    "completion": 99
+  }
+}

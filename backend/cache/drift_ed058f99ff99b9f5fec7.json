@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "The beneficiary's treating practitioner has concluded that the beneficiary (or the beneficiary's caregiver) has sufficient training using the particular device prescribed as evidenced by providing a prescription for the appropriate supplies and frequency of blood glucose testing.",
+    "wording_differences": "Original: \"The beneficiary's treating practitioner has concluded that the beneficiary (or the beneficiary's caregiver) has sufficient training using the particular device prescribed as evidenced by providing a prescription for the appropriate supplies and frequency of blood glucose testing.\"\nRevised: \"The beneficiary's treating practitioner has concluded that the beneficiary (or the beneficiary's caregiver) has sufficient training using the particular device prescribed as evidenced by providing a prescription for the appropriate supplies and frequency of blood glucose testing.\"\nNo differences in wording; the sentence is identical in both versions.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The requirement that sufficient training be evidenced by a prescription is present in the revised policy with identical wording. There are no changes in meaning, qualifiers, or scope.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"The beneficiary's treating practitioner has concluded that the beneficiary (or the beneficiary's caregiver) has sufficient training using the particular device prescribed as evidenced by providing a prescription for the appropriate supplies and frequency of blood glucose testing.\",\"wording_differences\":\"Original: \\\"The beneficiary's treating practitioner has concluded that the beneficiary (or the beneficiary's caregiver) has sufficient training using the particular device prescribed as evidenced by providing a prescription for the appropriate supplies and frequency of blood glucose testing.\\\"\\nRevised: \\\"The beneficiary's treating practitioner has concluded that the beneficiary (or the beneficiary's caregiver) has sufficient training using the particular device prescribed as evidenced by providing a prescription for the appropriate supplies and frequency of blood glucose testing.\\\"\\nNo differences in wording; the sentence is identical in both versions.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The requirement that sufficient training be evidenced by a prescription is present in the revised policy with identical wording. There are no changes in meaning, qualifiers, or scope.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-BGM-002",
+  "usage": {
+    "prompt": 3559,
+    "completion": 217
+  }
+}

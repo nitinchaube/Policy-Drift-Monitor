@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits the condition that claims for a BGM and related supplies are denied when billed in addition to BOTH an approved CGM device (K0554) AND the associated supply allowance (K0553). The rule only checks for K0554, not for K0553.",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The policy requires denial when both a CGM device (K0554) and its supply allowance (K0553) are billed in addition to a BGM and related supplies. The rule only checks for K0554, so it would allow claims where K0553 is present without K0554, which is not faithful to the policy. This is a material omission because it could result in claims being approved that should be denied under the policy."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits the condition that claims for a BGM and related supplies are denied when billed in addition to BOTH an approved CGM device (K0554) AND the associated supply allowance (K0553). The rule only checks for K0554, not for K0553.\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The policy requires denial when both a CGM device (K0554) and its supply allowance (K0553) are billed in addition to a BGM and related supplies. The rule only checks for K0554, so it would allow claims where K0553 is present without K0554, which is not faithful to the policy. This is a material omission because it could result in claims being approved that should be denied under the policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-arb-8487d2089c1e",
+  "usage": {
+    "prompt": 786,
+    "completion": 172
+  }
+}

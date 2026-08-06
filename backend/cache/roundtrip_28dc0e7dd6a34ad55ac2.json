@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits that the follow-up visit must be in-person, must be with the treating practitioner, and must specifically assess adherence to the CGM regimen and diabetes treatment plan. It also omits that this requirement is for every six months following the initial prescription.",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The rule only checks for a follow-up visit within 6 months, but does not require that the visit is in-person, with the treating practitioner, or that it assesses adherence to the CGM regimen and diabetes treatment plan. These are important qualifiers that could affect claim decisions, making the rule less strict than the policy and potentially allowing claims that should be denied."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits that the follow-up visit must be in-person, must be with the treating practitioner, and must specifically assess adherence to the CGM regimen and diabetes treatment plan. It also omits that this requirement is for every six months following the initial prescription.\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The rule only checks for a follow-up visit within 6 months, but does not require that the visit is in-person, with the treating practitioner, or that it assesses adherence to the CGM regimen and diabetes treatment plan. These are important qualifiers that could affect claim decisions, making the rule less strict than the policy and potentially allowing claims that should be denied.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-6-followup-visit",
+  "usage": {
+    "prompt": 411,
+    "completion": 149
+  }
+}

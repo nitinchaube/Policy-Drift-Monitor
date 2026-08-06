@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "All therapeutic CGM devices billed to Medicare using HCPCS code K0554 must be reviewed for correct coding by the Pricing, Data Analysis and Coding (PDAC) contractor. Continuous Glucose Monitor systems that are billed using HCPCS code K0554, but that are not listed on the Product Classification List for HCPCS code K0554, will be denied as incorrect coding.",
+    "explanation": "The revised policy explicitly states that all CGM devices billed under K0554 must be reviewed by PDAC and listed on the Product Classification List, and that those not listed will be denied as incorrect coding. This matches the requirement in the existing rule.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"All therapeutic CGM devices billed to Medicare using HCPCS code K0554 must be reviewed for correct coding by the Pricing, Data Analysis and Coding (PDAC) contractor. Continuous Glucose Monitor systems that are billed using HCPCS code K0554, but that are not listed on the Product Classification List for HCPCS code K0554, will be denied as incorrect coding.\",\"explanation\":\"The revised policy explicitly states that all CGM devices billed under K0554 must be reviewed by PDAC and listed on the Product Classification List, and that those not listed will be denied as incorrect coding. This matches the requirement in the existing rule.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-10",
+  "usage": {
+    "prompt": 3284,
+    "completion": 144
+  }
+}

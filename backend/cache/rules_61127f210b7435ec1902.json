@@ -1,0 +1,299 @@
+{
+  "parsed": {
+    "rules": [
+      {
+        "rule_id": "cgm-1-diabetes-diagnosis",
+        "title": "Diabetes diagnosis required for CGM coverage",
+        "summary": "Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,",
+        "source_sentence": "The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "diabetes_diagnosis",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "cgm-2-bgm-frequent-testing",
+        "title": "Frequent BGM testing required for CGM coverage",
+        "summary": "Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 2. The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,",
+        "source_sentence": "The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "bgm_testing_freq_per_day",
+              "op": ">=",
+              "value_kind": "number",
+              "value_string": null,
+              "value_number": 4,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "cgm-3-insulin-treated-multiple-injections-or-csii",
+        "title": "Insulin-treated with multiple daily injections or Medicare-covered CSII pump required for CGM coverage",
+        "summary": "Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 3. The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,",
+        "source_sentence": "The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "insulin_treated",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            },
+            {
+              "field": "insulin_injections_per_day",
+              "op": ">=",
+              "value_kind": "number",
+              "value_string": null,
+              "value_number": 3,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ANY",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "cgm-4-regimen-requires-frequent-adjustment",
+        "title": "Insulin regimen requires frequent adjustment for CGM coverage",
+        "summary": "Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 4. The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,",
+        "source_sentence": "The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "regimen_requires_frequent_adjustment",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      },
+      {
+        "rule_id": "cgm-5-in-person-visit-within-6mo-initial",
+        "title": "In-person visit within 6 months prior to ordering CGM required",
+        "summary": "Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 5. Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,",
+        "source_sentence": "Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "in_person_visit_within_6mo",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      },
+      {
+        "rule_id": "cgm-6-followup-visit-every-6mo",
+        "title": "Follow-up in-person visit every 6 months required for continued CGM coverage",
+        "summary": "Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 6. Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.",
+        "source_sentence": "Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.",
+        "codifiable": false,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "device_type",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "therapeutic_cgm",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "followup_visit_within_6mo",
+              "op": "is_true",
+              "value_kind": "boolean",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": true,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "REVIEW"
+        }
+      },
+      {
+        "rule_id": "cgm-7-k0553-supply-allowance-units",
+        "title": "Only one unit of K0553 may be billed per 30 days",
+        "summary": "The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.",
+        "source_sentence": "Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "==",
+              "value_kind": "string",
+              "value_string": "K0553",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "requires": [
+            {
+              "field": "units",
+              "op": "<=",
+              "value_kind": "number",
+              "value_string": null,
+              "value_number": 1,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      },
+      {
+        "rule_id": "cgm-8-bgm-and-supplies-not-covered-with-cgm",
+        "title": "BGM and related supplies not covered when CGM is approved",
+        "summary": "Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.",
+        "source_sentence": "Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.",
+        "codifiable": true,
+        "logic": {
+          "applies_when": [
+            {
+              "field": "procedure_code",
+              "op": "in",
+              "value_kind": "string_list",
+              "value_string": null,
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": [
+                "E0607",
+                "E2100",
+                "E2101"
+              ]
+            }
+          ],
+          "requires": [
+            {
+              "field": "procedure_code",
+              "op": "!=",
+              "value_kind": "string",
+              "value_string": "K0554",
+              "value_number": null,
+              "value_boolean": null,
+              "value_list": null
+            }
+          ],
+          "combinator": "ALL",
+          "n": null,
+          "on_fail": "DENY"
+        }
+      }
+    ]
+  },
+  "raw": "{\"rules\":[{\"rule_id\":\"cgm-1-diabetes-diagnosis\",\"title\":\"Diabetes diagnosis required for CGM coverage\",\"summary\":\"Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,\",\"source_sentence\":\"The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"diabetes_diagnosis\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"cgm-2-bgm-frequent-testing\",\"title\":\"Frequent BGM testing required for CGM coverage\",\"summary\":\"Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 2. The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,\",\"source_sentence\":\"The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"bgm_testing_freq_per_day\",\"op\":\">=\",\"value_kind\":\"number\",\"value_string\":null,\"value_number\":4,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"cgm-3-insulin-treated-multiple-injections-or-csii\",\"title\":\"Insulin-treated with multiple daily injections or Medicare-covered CSII pump required for CGM coverage\",\"summary\":\"Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 3. The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,\",\"source_sentence\":\"The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"insulin_treated\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null},{\"field\":\"insulin_injections_per_day\",\"op\":\">=\",\"value_kind\":\"number\",\"value_string\":null,\"value_number\":3,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ANY\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"cgm-4-regimen-requires-frequent-adjustment\",\"title\":\"Insulin regimen requires frequent adjustment for CGM coverage\",\"summary\":\"Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 4. The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,\",\"source_sentence\":\"The beneficiary's insulin treatment regimen requires frequent adjustment by the beneficiary on the basis of BGM or CGM testing results; and,\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"regimen_requires_frequent_adjustment\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}},{\"rule_id\":\"cgm-5-in-person-visit-within-6mo-initial\",\"title\":\"In-person visit within 6 months prior to ordering CGM required\",\"summary\":\"Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 5. Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,\",\"source_sentence\":\"Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person visit with the beneficiary to evaluate their diabetes control and determined that criteria (1-4) above are met; and,\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"in_person_visit_within_6mo\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}},{\"rule_id\":\"cgm-6-followup-visit-every-6mo\",\"title\":\"Follow-up in-person visit every 6 months required for continued CGM coverage\",\"summary\":\"Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-6) are met: 6. Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.\",\"source_sentence\":\"Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.\",\"codifiable\":false,\"logic\":{\"applies_when\":[{\"field\":\"device_type\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"therapeutic_cgm\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"followup_visit_within_6mo\",\"op\":\"is_true\",\"value_kind\":\"boolean\",\"value_string\":null,\"value_number\":null,\"value_boolean\":true,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"REVIEW\"}},{\"rule_id\":\"cgm-7-k0553-supply-allowance-units\",\"title\":\"Only one unit of K0553 may be billed per 30 days\",\"summary\":\"The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\",\"source_sentence\":\"Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"==\",\"value_kind\":\"string\",\"value_string\":\"K0553\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"requires\":[{\"field\":\"units\",\"op\":\"<=\",\"value_kind\":\"number\",\"value_string\":null,\"value_number\":1,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}},{\"rule_id\":\"cgm-8-bgm-and-supplies-not-covered-with-cgm\",\"title\":\"BGM and related supplies not covered when CGM is approved\",\"summary\":\"Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.\",\"source_sentence\":\"Claims for a BGM and related supplies, billed in addition to an approved CGM device (code K0554) and associated supply allowance (code K0553), will be denied.\",\"codifiable\":true,\"logic\":{\"applies_when\":[{\"field\":\"procedure_code\",\"op\":\"in\",\"value_kind\":\"string_list\",\"value_string\":null,\"value_number\":null,\"value_boolean\":null,\"value_list\":[\"E0607\",\"E2100\",\"E2101\"]}],\"requires\":[{\"field\":\"procedure_code\",\"op\":\"!=\",\"value_kind\":\"string\",\"value_string\":\"K0554\",\"value_number\":null,\"value_boolean\":null,\"value_list\":null}],\"combinator\":\"ALL\",\"n\":null,\"on_fail\":\"DENY\"}}]}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "stability2",
+  "usage": {
+    "prompt": 1843,
+    "completion": 1980
+  }
+}

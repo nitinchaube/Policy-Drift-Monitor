@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Denied: K0553 billed for more than 1 unit per 30 days.",
+    "explanation": "The claim is denied because it does not meet the following policy requirement: \"Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\" The claim was submitted for 2 units within a 30-day period.",
+    "what_to_do": "Review the number of units billed and resubmit if appropriate."
+  },
+  "raw": "{\"headline\":\"Denied: K0553 billed for more than 1 unit per 30 days.\",\"explanation\":\"The claim is denied because it does not meet the following policy requirement: \\\"Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\\\" The claim was submitted for 2 units within a 30-day period.\",\"what_to_do\":\"Review the number of units billed and resubmit if appropriate.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "before-C-009",
+  "usage": {
+    "prompt": 582,
+    "completion": 95
+  }
+}

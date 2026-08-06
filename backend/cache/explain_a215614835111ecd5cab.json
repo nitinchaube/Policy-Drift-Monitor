@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Denied: No in-person follow-up visit within six months documented.",
+    "explanation": "This claim is denied because it does not meet the requirement: \"Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.\" The record does not show an in-person follow-up visit within the required six-month period.",
+    "what_to_do": "Submit documentation of an in-person follow-up visit within six months if available, or correct and resubmit the claim if appropriate."
+  },
+  "raw": "{\"headline\":\"Denied: No in-person follow-up visit within six months documented.\",\"explanation\":\"This claim is denied because it does not meet the requirement: \\\"Every six (6) months following the initial prescription of the CGM, the treating practitioner has an in-person visit with the beneficiary to assess adherence to their CGM regimen and diabetes treatment plan.\\\" The record does not show an in-person follow-up visit within the required six-month period.\",\"what_to_do\":\"Submit documentation of an in-person follow-up visit within six months if available, or correct and resubmit the claim if appropriate.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "before-C-020",
+  "usage": {
+    "prompt": 604,
+    "completion": 119
+  }
+}

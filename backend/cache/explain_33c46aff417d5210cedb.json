@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Claim denied: beneficiary did not meet BGM testing frequency requirement.",
+    "explanation": "Coverage requires that 'The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,' but the record shows only two tests per day. This does not meet the policy requirement for coverage.",
+    "what_to_do": "No action needed."
+  },
+  "raw": "{\"headline\":\"Claim denied: beneficiary did not meet BGM testing frequency requirement.\",\"explanation\":\"Coverage requires that 'The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,' but the record shows only two tests per day. This does not meet the policy requirement for coverage.\",\"what_to_do\":\"No action needed.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "before-C-003",
+  "usage": {
+    "prompt": 586,
+    "completion": 75
+  }
+}

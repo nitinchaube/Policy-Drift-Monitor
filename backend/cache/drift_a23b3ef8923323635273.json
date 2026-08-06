@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "MODIFIED",
+    "evidence_sentence": "Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-5) are met:",
+    "explanation": "The revised policy still requires that all listed criteria must be met for coverage of CGM and related supplies, but the number and content of the criteria have changed from (1-6) to (1-5). The rule as written refers to (1-6), but the revised policy only has (1-5), so the rule is now too strict if applied literally.",
+    "recommended_action": "REVISE"
+  },
+  "raw": "{\"verdict\":\"MODIFIED\",\"evidence_sentence\":\"Therapeutic CGMs and related supplies are covered by Medicare when all of the following coverage criteria (1-5) are met:\",\"explanation\":\"The revised policy still requires that all listed criteria must be met for coverage of CGM and related supplies, but the number and content of the criteria have changed from (1-6) to (1-5). The rule as written refers to (1-6), but the revised policy only has (1-5), so the rule is now too strict if applied literally.\",\"recommended_action\":\"REVISE\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-CGM-7",
+  "usage": {
+    "prompt": 3351,
+    "completion": 125
+  }
+}

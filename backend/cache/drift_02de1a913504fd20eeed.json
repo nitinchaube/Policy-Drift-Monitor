@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.",
+    "wording_differences": "none",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": false,
+    "changes_what_claims_qualify": false,
+    "explanation": "The sentence in the revised policy is verbatim to the original sentence from which the rule was derived. There are no wording differences, and the requirement for a follow-up visit every six months to document adherence is still present. The rule logic matches the continued coverage requirement as stated in the revised policy, so there is no change in what claims would qualify under the rule."
+  },
+  "raw": "{\"evidence_sentence\":\"Every six (6) months following the initial prescription of the CGM, the treating practitioner conducts an in-person or Medicare-approved telehealth visit with the beneficiary to document adherence to their CGM regimen and diabetes treatment plan.\",\"wording_differences\":\"none\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":false,\"changes_what_claims_qualify\":false,\"explanation\":\"The sentence in the revised policy is verbatim to the original sentence from which the rule was derived. There are no wording differences, and the requirement for a follow-up visit every six months to document adherence is still present. The rule logic matches the continued coverage requirement as stated in the revised policy, so there is no change in what claims would qualify under the rule.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-6",
+  "usage": {
+    "prompt": 4201,
+    "completion": 162
+  }
+}

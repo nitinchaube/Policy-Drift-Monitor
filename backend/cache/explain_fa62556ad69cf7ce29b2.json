@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Claim denied: beneficiary did not meet BGM testing frequency requirement.",
+    "explanation": "This claim is denied because the beneficiary did not meet the requirement that \"The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,\" as stated in policy. The record shows only one blood glucose test per day.",
+    "what_to_do": "No action needed unless you have documentation showing four or more BGM tests per day; if so, submit that with a new claim."
+  },
+  "raw": "{\"headline\":\"Claim denied: beneficiary did not meet BGM testing frequency requirement.\",\"explanation\":\"This claim is denied because the beneficiary did not meet the requirement that \\\"The beneficiary has been using a BGM and performing frequent (four or more times a day) testing; and,\\\" as stated in policy. The record shows only one blood glucose test per day.\",\"what_to_do\":\"No action needed unless you have documentation showing four or more BGM tests per day; if so, submit that with a new claim.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "nb-C-007",
+  "usage": {
+    "prompt": 586,
+    "completion": 104
+  }
+}

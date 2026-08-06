@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.",
+    "wording_differences": "Original: 'Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.' Revised: 'The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.' The revised policy adds two sentences before the original sentence, clarifying that K0553 is billed as 1 UOS per 30 days and that only one UOS may be billed at a time. The operative restriction ('Billing more than 1 UOS per 30 days...') is unchanged. The additional sentences are clarifications, not changes in meaning.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The revised policy retains the exact operative sentence from the original, and the additional context does not alter the restriction. The rule is still fully supported by the revised policy.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\",\"wording_differences\":\"Original: 'Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.' Revised: 'The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.' The revised policy adds two sentences before the original sentence, clarifying that K0553 is billed as 1 UOS per 30 days and that only one UOS may be billed at a time. The operative restriction ('Billing more than 1 UOS per 30 days...') is unchanged. The additional sentences are clarifications, not changes in meaning.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The revised policy retains the exact operative sentence from the original, and the additional context does not alter the restriction. The rule is still fully supported by the revised policy.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-SUP-001",
+  "usage": {
+    "prompt": 3533,
+    "completion": 328
+  }
+}

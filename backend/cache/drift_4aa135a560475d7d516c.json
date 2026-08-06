@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.",
+    "wording_differences": "Original: \"Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\"\nRevised: \"Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\" (plus preceding context: \"The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time.\")\n\nThere are no differences in the operative sentence itself; the revised policy adds clarifying context but does not change the rule's substance.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The operative sentence regarding the billing limit for code K0553 is unchanged between the original and revised policy. The additional context in the revised policy does not alter the meaning or application of the rule. Therefore, the requirement survives with the same meaning and only cosmetic/contextual differences are present.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\",\"wording_differences\":\"Original: \\\"Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\\\"\\nRevised: \\\"Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\\\" (plus preceding context: \\\"The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time.\\\")\\n\\nThere are no differences in the operative sentence itself; the revised policy adds clarifying context but does not change the rule's substance.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The operative sentence regarding the billing limit for code K0553 is unchanged between the original and revised policy. The additional context in the revised policy does not alter the meaning or application of the rule. Therefore, the requirement survives with the same meaning and only cosmetic/contextual differences are present.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-SUP-001",
+  "usage": {
+    "prompt": 3679,
+    "completion": 318
+  }
+}

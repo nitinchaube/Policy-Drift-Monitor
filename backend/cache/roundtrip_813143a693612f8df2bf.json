@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits the requirement that, for CSII pump users, the pump must be Medicare-covered (csii_pump_medicare_covered). The rule also allows insulin_treated alone to qualify, without requiring either three or more daily injections or use of a Medicare-covered CSII pump, which is broader than the policy.",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The rule is materially less strict than the policy: it allows any insulin-treated beneficiary to qualify, even if they do not meet the threshold of three or more daily injections or use a Medicare-covered CSII pump. It also does not check that the CSII pump is Medicare-covered, which is a specific qualifier in the policy. These omissions and broadenings would allow claims that the policy would deny."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits the requirement that, for CSII pump users, the pump must be Medicare-covered (csii_pump_medicare_covered). The rule also allows insulin_treated alone to qualify, without requiring either three or more daily injections or use of a Medicare-covered CSII pump, which is broader than the policy.\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The rule is materially less strict than the policy: it allows any insulin-treated beneficiary to qualify, even if they do not meet the threshold of three or more daily injections or use a Medicare-covered CSII pump. It also does not check that the CSII pump is Medicare-covered, which is a specific qualifier in the policy. These omissions and broadenings would allow claims that the policy would deny.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-nb-cgm-3-insulin-treated",
+  "usage": {
+    "prompt": 788,
+    "completion": 170
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Non-adjunctive CGM devices replace standard home BGMs (HCPCS codes E0607, E2100, E2101) and related supplies (HCPCS codes A4233, A4234, A4235, A4236, A4244, A4245, A4246, A4247, A4250, A4253, A4255, A4256, A4257, A4258, A4259). Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.",
+    "wording_differences": "none",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": false,
+    "changes_what_claims_qualify": false,
+    "explanation": "The sentence in the revised policy is verbatim to the original sentence from which the rule was derived. There are no wording differences, and the requirement that claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (E2103) and supply allowance (A4239), will be denied is still present. This was not an item in a numbered criteria list but a standalone coverage/payment rule. The rule's logic matches the policy requirement exactly, so there is no change in what claims would qualify or be denied under the revised policy."
+  },
+  "raw": "{\"evidence_sentence\":\"Non-adjunctive CGM devices replace standard home BGMs (HCPCS codes E0607, E2100, E2101) and related supplies (HCPCS codes A4233, A4234, A4235, A4236, A4244, A4245, A4246, A4247, A4250, A4253, A4255, A4256, A4257, A4258, A4259). Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\",\"wording_differences\":\"none\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":false,\"changes_what_claims_qualify\":false,\"explanation\":\"The sentence in the revised policy is verbatim to the original sentence from which the rule was derived. There are no wording differences, and the requirement that claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (E2103) and supply allowance (A4239), will be denied is still present. This was not an item in a numbered criteria list but a standalone coverage/payment rule. The rule's logic matches the policy requirement exactly, so there is no change in what claims would qualify or be denied under the revised policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-8",
+  "usage": {
+    "prompt": 4217,
+    "completion": 300
+  }
+}

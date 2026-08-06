@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "none",
+    "extra_in_rule": "none",
+    "faithful": true,
+    "severity": "none",
+    "explanation": "The rule accurately captures the policy requirement that the beneficiary must have been performing frequent (four or more times a day) BGM testing, as represented by the field bgm_testing_freq_per_day >= 4. There are no material omissions or extra conditions."
+  },
+  "raw": "{\"missing_from_rule\":\"none\",\"extra_in_rule\":\"none\",\"faithful\":true,\"severity\":\"none\",\"explanation\":\"The rule accurately captures the policy requirement that the beneficiary must have been performing frequent (four or more times a day) BGM testing, as represented by the field bgm_testing_freq_per_day >= 4. There are no material omissions or extra conditions.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-2-bgm-testing-freq",
+  "usage": {
+    "prompt": 772,
+    "completion": 77
+  }
+}

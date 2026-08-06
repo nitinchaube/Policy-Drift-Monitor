@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits the requirement that, for CSII pump users, the pump must be Medicare-covered (csii_pump_medicare_covered). The rule only checks if insulin_injections_per_day >= 3 or insulin_treated is true, but does not check if the beneficiary is using a Medicare-covered CSII pump as an alternative to multiple daily injections.",
+    "extra_in_rule": "The rule allows insulin_treated = true as a sufficient condition, which is broader than the policy. The policy requires either multiple (three or more) daily injections or use of a Medicare-covered CSII pump, not just any insulin treatment.",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The rule is both overbroad and incomplete: it allows claims for anyone who is insulin treated (even if not on multiple daily injections or a Medicare-covered CSII pump), and it does not require the CSII pump to be Medicare-covered. This could result in approving claims that should be denied and denying claims that should be approved."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits the requirement that, for CSII pump users, the pump must be Medicare-covered (csii_pump_medicare_covered). The rule only checks if insulin_injections_per_day >= 3 or insulin_treated is true, but does not check if the beneficiary is using a Medicare-covered CSII pump as an alternative to multiple daily injections.\",\"extra_in_rule\":\"The rule allows insulin_treated = true as a sufficient condition, which is broader than the policy. The policy requires either multiple (three or more) daily injections or use of a Medicare-covered CSII pump, not just any insulin treatment.\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The rule is both overbroad and incomplete: it allows claims for anyone who is insulin treated (even if not on multiple daily injections or a Medicare-covered CSII pump), and it does not require the CSII pump to be Medicare-covered. This could result in approving claims that should be denied and denying claims that should be approved.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-3-insulin-treated",
+  "usage": {
+    "prompt": 787,
+    "completion": 211
+  }
+}

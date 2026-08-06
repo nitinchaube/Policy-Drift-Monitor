@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "5. Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person or Medicare-approved telehealth visit with the beneficiary to evaluate their diabetes control and determined that criteria (1)-(4) above are met.",
+    "wording_differences": "none",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": true,
+    "changes_what_claims_qualify": false,
+    "explanation": "The evidence sentence in the revised policy is identical to the sentence the rule was derived from. There are no wording differences. The requirement is still present as item 5 in the list of initial coverage criteria for CGM. The rule logic matches the policy requirement exactly, so there is no change in what claims would qualify or be denied under the revised policy."
+  },
+  "raw": "{\"evidence_sentence\":\"5. Within six (6) months prior to ordering the CGM, the treating practitioner has an in-person or Medicare-approved telehealth visit with the beneficiary to evaluate their diabetes control and determined that criteria (1)-(4) above are met.\",\"wording_differences\":\"none\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":true,\"changes_what_claims_qualify\":false,\"explanation\":\"The evidence sentence in the revised policy is identical to the sentence the rule was derived from. There are no wording differences. The requirement is still present as item 5 in the list of initial coverage criteria for CGM. The rule logic matches the policy requirement exactly, so there is no change in what claims would qualify or be denied under the revised policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-5",
+  "usage": {
+    "prompt": 4210,
+    "completion": 165
+  }
+}

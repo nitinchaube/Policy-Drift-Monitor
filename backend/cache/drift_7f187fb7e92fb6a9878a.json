@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "verdict": "SUPPORTED",
+    "evidence_sentence": "The supply allowance (code A4238 or A4239) is a monthly allowance that may be billed up to a maximum of three (3) units of service (UOS) per ninety (90) days at a time.",
+    "explanation": "The revised policy contains the exact same requirement as the existing rule: a maximum of three units of service for codes A4238 or A4239 may be billed per ninety days. The wording is unchanged and the meaning is identical.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"verdict\":\"SUPPORTED\",\"evidence_sentence\":\"The supply allowance (code A4238 or A4239) is a monthly allowance that may be billed up to a maximum of three (3) units of service (UOS) per ninety (90) days at a time.\",\"explanation\":\"The revised policy contains the exact same requirement as the existing rule: a maximum of three units of service for codes A4238 or A4239 may be billed per ninety days. The wording is unchanged and the meaning is identical.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-7",
+  "usage": {
+    "prompt": 3948,
+    "completion": 111
+  }
+}

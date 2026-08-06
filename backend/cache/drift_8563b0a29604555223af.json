@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.",
+    "wording_differences": "none",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": false,
+    "changes_what_claims_qualify": false,
+    "explanation": "The operative sentence in the revised policy is identical to the original sentence from which the rule was derived. There are no wording differences, and the requirement that only one unit of K0553 may be billed per 30 days is still present in the revised policy. This requirement is not part of a numbered criteria list but is a standalone billing limitation. The rule's logic (denying claims with more than 1 unit per 30 days for K0553) still matches the policy exactly, so no claim outcomes would change under the revised policy."
+  },
+  "raw": "{\"evidence_sentence\":\"The supply allowance (code K0553) is billed as 1 Unit of Service (UOS) per thirty (30) days. Only one (1) UOS of code K0553 may be billed to the DME MACs at a time. Billing more than 1 UOS per 30 days of code K0553 will be denied as not reasonable and necessary.\",\"wording_differences\":\"none\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":false,\"changes_what_claims_qualify\":false,\"explanation\":\"The operative sentence in the revised policy is identical to the original sentence from which the rule was derived. There are no wording differences, and the requirement that only one unit of K0553 may be billed per 30 days is still present in the revised policy. This requirement is not part of a numbered criteria list but is a standalone billing limitation. The rule's logic (denying claims with more than 1 unit per 30 days for K0553) still matches the policy exactly, so no claim outcomes would change under the revised policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-SUP-001",
+  "usage": {
+    "prompt": 3517,
+    "completion": 232
+  }
+}

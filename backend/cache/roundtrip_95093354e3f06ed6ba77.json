@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits the requirement that the patient must be treated with either multiple (three or more) daily injections of insulin OR a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump. The rule instead allows for any insulin treatment (insulin_treated is true), which is broader than the policy's specific alternatives.",
+    "extra_in_rule": "none",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The policy requires that the beneficiary is either on multiple (three or more) daily injections of insulin or using a Medicare-covered CSII pump. The rule, however, allows for any insulin treatment (insulin_treated is true), which could include less frequent injections or non-Medicare-covered pumps, thus approving claims that should not be approved under the policy. This is a material difference because it could lead to wrongful approvals."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits the requirement that the patient must be treated with either multiple (three or more) daily injections of insulin OR a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump. The rule instead allows for any insulin treatment (insulin_treated is true), which is broader than the policy's specific alternatives.\",\"extra_in_rule\":\"none\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The policy requires that the beneficiary is either on multiple (three or more) daily injections of insulin or using a Medicare-covered CSII pump. The rule, however, allows for any insulin treatment (insulin_treated is true), which could include less frequent injections or non-Medicare-covered pumps, thus approving claims that should not be approved under the policy. This is a material difference because it could lead to wrongful approvals.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-3-insulin-treated",
+  "usage": {
+    "prompt": 415,
+    "completion": 174
+  }
+}

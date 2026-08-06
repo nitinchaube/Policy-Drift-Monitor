@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "The rule omits that the frequent adjustment must be made by the beneficiary and must be based on BGM or CGM testing results.",
+    "extra_in_rule": "The rule adds a condition that applies only if device_type is 'therapeutic_cgm', which is not specified in the policy sentence.",
+    "faithful": false,
+    "severity": "material",
+    "explanation": "The rule drops two qualifiers: (1) that the adjustments are made by the beneficiary, and (2) that the adjustments are based on BGM or CGM results. It also adds a device_type restriction not present in the policy. These differences could lead to claims being approved or denied incorrectly."
+  },
+  "raw": "{\"missing_from_rule\":\"The rule omits that the frequent adjustment must be made by the beneficiary and must be based on BGM or CGM testing results.\",\"extra_in_rule\":\"The rule adds a condition that applies only if device_type is 'therapeutic_cgm', which is not specified in the policy sentence.\",\"faithful\":false,\"severity\":\"material\",\"explanation\":\"The rule drops two qualifiers: (1) that the adjustments are made by the beneficiary, and (2) that the adjustments are based on BGM or CGM results. It also adds a device_type restriction not present in the policy. These differences could lead to claims being approved or denied incorrectly.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-4-regimen-adjustment",
+  "usage": {
+    "prompt": 400,
+    "completion": 137
+  }
+}

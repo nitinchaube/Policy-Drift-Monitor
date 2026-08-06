@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.",
+    "wording_differences": "Original: \"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\" Revised: \"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\" Difference: none.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The sentence in the revised policy is verbatim identical to the original sentence from which the rule was derived. There are no wording differences, so the meaning and application of the requirement are unchanged. Claims with identical facts would be decided the same way under both the original and revised policy.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\",\"wording_differences\":\"Original: \\\"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\\\" Revised: \\\"Claims for a BGM and related supplies, billed in addition to a non-adjunctive CGM device (code E2103) and associated supply allowance (code A4239), will be denied.\\\" Difference: none.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The sentence in the revised policy is verbatim identical to the original sentence from which the rule was derived. There are no wording differences, so the meaning and application of the requirement are unchanged. Claims with identical facts would be decided the same way under both the original and revised policy.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-8",
+  "usage": {
+    "prompt": 4379,
+    "completion": 227
+  }
+}

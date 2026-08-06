@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Claim for K0554 approved for payment.",
+    "explanation": "No policy requirements were unmet for this claim. The claim is approved for payment.",
+    "what_to_do": "No action needed."
+  },
+  "raw": "{\"headline\":\"Claim for K0554 approved for payment.\",\"explanation\":\"No policy requirements were unmet for this claim. The claim is approved for payment.\",\"what_to_do\":\"No action needed.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "after-C-003",
+  "usage": {
+    "prompt": 526,
+    "completion": 40
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,",
+    "wording_differences": "Original: 'The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,'\nRevised: '1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,'\nDifference: The revised policy adds a numbered list item ('1.') but the wording of the requirement itself is identical.",
+    "changes_what_claims_qualify": false,
+    "verdict": "SUPPORTED",
+    "explanation": "The only difference is the addition of a list number ('1.') in the revised policy. The operative requirement\u2014that the beneficiary has diabetes mellitus, as referenced by the ICD-10 code list\u2014remains unchanged. There are no changes to the scope, qualifiers, or operative terms. Therefore, the rule is still fully supported by the revised policy.",
+    "recommended_action": "KEEP"
+  },
+  "raw": "{\"evidence_sentence\":\"1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,\",\"wording_differences\":\"Original: 'The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,'\\nRevised: '1. The beneficiary has diabetes mellitus (Refer to the ICD-10 code list in the LCD-related Policy Article for applicable diagnoses); and,'\\nDifference: The revised policy adds a numbered list item ('1.') but the wording of the requirement itself is identical.\",\"changes_what_claims_qualify\":false,\"verdict\":\"SUPPORTED\",\"explanation\":\"The only difference is the addition of a list number ('1.') in the revised policy. The operative requirement\u2014that the beneficiary has diabetes mellitus, as referenced by the ICD-10 code list\u2014remains unchanged. There are no changes to the scope, qualifiers, or operative terms. Therefore, the rule is still fully supported by the revised policy.\",\"recommended_action\":\"KEEP\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "neg-CGM-1",
+  "usage": {
+    "prompt": 4340,
+    "completion": 221
+  }
+}

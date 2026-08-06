@@ -1,0 +1,13 @@
+{
+  "parsed": {
+    "plain_english": "If device_type is equal to 'therapeutic_cgm', then diabetes_diagnosis must be true."
+  },
+  "raw": "{\"plain_english\":\"If device_type is equal to 'therapeutic_cgm', then diabetes_diagnosis must be true.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "dc-v1-cgm-1-diabetes-diagnosis",
+  "usage": {
+    "prompt": 268,
+    "completion": 28
+  }
+}

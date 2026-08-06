@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "headline": "Denied: Insulin Administration Requirement Not Met for CGM Coverage",
+    "explanation": "This claim is denied because it does not meet the requirement: \"The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,\". The record shows fewer than three daily insulin injections and no Medicare-covered CSII pump.",
+    "what_to_do": "No action needed unless documentation can show three or more daily insulin injections or a Medicare-covered CSII pump."
+  },
+  "raw": "{\"headline\":\"Denied: Insulin Administration Requirement Not Met for CGM Coverage\",\"explanation\":\"This claim is denied because it does not meet the requirement: \\\"The beneficiary is insulin-treated with multiple (three or more) daily injections of insulin or a Medicare-covered continuous subcutaneous insulin infusion (CSII) pump; and,\\\". The record shows fewer than three daily insulin injections and no Medicare-covered CSII pump.\",\"what_to_do\":\"No action needed unless documentation can show three or more daily insulin injections or a Medicare-covered CSII pump.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "before-C-016",
+  "usage": {
+    "prompt": 607,
+    "completion": 109
+  }
+}

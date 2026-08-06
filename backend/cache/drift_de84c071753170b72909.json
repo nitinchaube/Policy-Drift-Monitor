@@ -1,0 +1,18 @@
+{
+  "parsed": {
+    "evidence_sentence": "A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.",
+    "wording_differences": "Original: 'If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.' Revised: 'A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.' The revised policy adds a preceding sentence clarifying that the SWO must be communicated before claim submission, but the operative requirement and consequence are unchanged.",
+    "requirement_still_present": true,
+    "was_item_in_criteria_list": false,
+    "changes_what_claims_qualify": false,
+    "explanation": "The operative requirement\u2014that a completed SWO must be received before billing for any item addressed in the policy\u2014remains verbatim in the revised policy. The logic of the rule (requiring an SWO on file before billing for the specified codes) still matches the policy's requirement. The addition of a clarifying sentence does not alter the scope or application of the rule, so no claim outcomes would change under the revised policy."
+  },
+  "raw": "{\"evidence_sentence\":\"A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.\",\"wording_differences\":\"Original: 'If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.' Revised: 'A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted. If the supplier bills for an item addressed in this policy without first receiving a completed SWO, the claim shall be denied as not reasonable and necessary.' The revised policy adds a preceding sentence clarifying that the SWO must be communicated before claim submission, but the operative requirement and consequence are unchanged.\",\"requirement_still_present\":true,\"was_item_in_criteria_list\":false,\"changes_what_claims_qualify\":false,\"explanation\":\"The operative requirement\u2014that a completed SWO must be received before billing for any item addressed in the policy\u2014remains verbatim in the revised policy. The logic of the rule (requiring an SWO on file before billing for the specified codes) still matches the policy's requirement. The addition of a clarifying sentence does not alter the scope or application of the rule, so no claim outcomes would change under the revised policy.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "2020to2021-GEN-001",
+  "usage": {
+    "prompt": 3542,
+    "completion": 294
+  }
+}

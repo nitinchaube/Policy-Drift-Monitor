@@ -1,0 +1,17 @@
+{
+  "parsed": {
+    "missing_from_rule": "none",
+    "extra_in_rule": "none",
+    "faithful": true,
+    "severity": "none",
+    "explanation": "The rule accurately captures both alternatives in the policy sentence: (1) three or more daily insulin injections, or (2) use of a Medicare-covered CSII pump. It uses the available claim fields appropriately and does not add or omit any material conditions."
+  },
+  "raw": "{\"missing_from_rule\":\"none\",\"extra_in_rule\":\"none\",\"faithful\":true,\"severity\":\"none\",\"explanation\":\"The rule accurately captures both alternatives in the policy sentence: (1) three or more daily insulin injections, or (2) use of a Medicare-covered CSII pump. It uses the available claim fields appropriately and does not add or omit any material conditions.\"}",
+  "model": "gpt-4.1",
+  "temperature": 0.0,
+  "run_tag": "cmp-v1-cgm-3-insulin-treated",
+  "usage": {
+    "prompt": 797,
+    "completion": 77
+  }
+}
